@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FahrradTechnik – Johannes Neugebauer, 1030 Wien</title>
+<style>@font-face{font-family:'Bebas Neue';src:url('fonts/BebasNeue-Regular.woff2') format('woff2'),url('fonts/BebasNeue-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}@font-face{font-family:'Nunito';src:url('fonts/Nunito-Regular.woff2') format('woff2'),url('fonts/Nunito-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}@font-face{font-family:'Nunito';src:url('fonts/Nunito-SemiBold.woff2') format('woff2'),url('fonts/Nunito-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap;}@font-face{font-family:'Nunito';src:url('fonts/Nunito-Bold.woff2') format('woff2'),url('fonts/Nunito-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}@font-face{font-family:'Nunito';src:url('fonts/Nunito-ExtraBold.woff2') format('woff2'),url('fonts/Nunito-ExtraBold.ttf') format('truetype');font-weight:800;font-style:normal;font-display:swap;}</style>
+<style>:root{--white:#F8F5EE;--cream:#EDE8DC;--green:#3A5A2A;--green2:#4E7A38;--khaki:#7D8C5C;--khaki2:#A5B07A;--orange:#E8621A;--orange2:#F5883A;--dark:#1E2318;--mid:#3C3C30;--shadow:0 4px 32px rgba(30,35,24,0.13);}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'Nunito',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden;}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--dark);display:flex;align-items:center;padding:0 32px;height:60px;box-shadow:0 2px 16px rgba(0,0,0,0.3);}.nav-inner{max-width:1100px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}.nav-logo{font-family:'Bebas Neue',cursive;font-size:26px;color:var(--orange);letter-spacing:2px;text-decoration:none;}.nav-links{display:flex;gap:6px;list-style:none;}.nav-links a{color:var(--khaki2);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:0.5px;padding:6px 10px;border-radius:4px;transition:color 0.2s,background 0.2s;text-transform:uppercase;}.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.07);}.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}.burger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.3s,opacity 0.3s;}.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}.burger.open span:nth-child(2){opacity:0;}.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--dark);z-index:99;flex-direction:column;padding:16px 24px 24px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,0.3);}.mobile-menu.open{display:flex;}.mobile-menu a{color:var(--khaki2);text-decoration:none;font-size:15px;font-weight:700;letter-spacing:0.5px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);text-transform:uppercase;}.mobile-menu a:last-child{border-bottom:none;}section{scroll-margin-top:60px;}#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 32px 60px;}#hero::before{content:'';position:absolute;inset:0;background-image:url('photo_werkstatt.jpeg');background-size:cover;background-position:center 30%;filter:brightness(0.45) saturate(0.7);z-index:0;}#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,25,15,0.93) 0%,rgba(20,25,15,0.78) 42%,rgba(20,25,15,0.12) 72%,transparent 100%);z-index:1;}.hero-content{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto;}.hero-text{max-width:600px;}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,98,26,0.15);border:1px solid rgba(232,98,26,0.4);color:var(--orange2);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:28px;}.hero-badge::before{content:'🔧';}h1{font-family:'Bebas Neue',cursive;font-size:clamp(56px,9vw,110px);line-height:0.93;color:var(--white);margin-bottom:24px;}h1 span{color:var(--orange);}.hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--khaki2);line-height:1.6;max-width:520px;margin-bottom:40px;}.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--white);font-weight:800;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s;box-shadow:0 4px 20px rgba(232,98,26,0.35);}.btn-primary:hover{background:var(--orange2);transform:translateY(-2px);}.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:var(--white);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s;}.btn-secondary:hover{background:rgba(255,255,255,0.12);}.hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap;}.stat{text-align:left;}.stat-num{font-family:'Bebas Neue',cursive;font-size:42px;color:var(--orange);line-height:1;}.stat-label{font-size:12px;font-weight:700;color:var(--khaki2);letter-spacing:1px;text-transform:uppercase;}.master-photo-wrap{width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;margin-bottom:20px;background:rgba(255,255,255,0.05);}.master-photo{width:100%;height:100%;object-fit:cover;display:block;}.master-photo-fallback{display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:rgba(255,255,255,0.3);font-size:32px;font-weight:700;text-align:center;border:2px dashed rgba(255,255,255,0.1);border-radius:12px;padding:16px;}.master-photo-fallback span{font-size:13px;}.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px;gap:12px;margin-top:48px;border-radius:16px;overflow:hidden;}.gallery-item{position:relative;overflow:hidden;border-radius:12px;}.gallery-item--wide{grid-column:1;}.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;}.gallery-item:hover img{transform:scale(1.04);}.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,25,15,0.75));color:white;font-size:13px;font-weight:700;padding:20px 14px 10px;letter-spacing:0.5px;}@media (max-width:768px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;}.gallery-item--wide{grid-column:1 / -1;}}@media (max-width:480px){.gallery{grid-template-columns:1fr;grid-template-rows:auto;}.gallery-item{height:220px;}.gallery-item--wide{grid-column:1;}}#about{background:var(--cream);padding:96px 32px;}.section-inner{max-width:1100px;margin:0 auto;}.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--khaki);margin-bottom:16px;}.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--orange);border-radius:2px;}h2{font-family:'Bebas Neue',cursive;font-size:clamp(36px,5vw,64px);color:var(--dark);line-height:1;margin-bottom:20px;}h2 span{color:var(--green);}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px;}.about-text p{font-size:16px;line-height:1.75;color:var(--mid);margin-bottom:16px;}.about-card{background:var(--dark);border-radius:16px;padding:40px;color:var(--white);position:relative;overflow:hidden;}.about-card::before{content:'🚲';position:absolute;font-size:120px;right:-10px;bottom:-20px;opacity:0.08;line-height:1;}.about-card h3{font-family:'Bebas Neue',cursive;font-size:32px;color:var(--orange);margin-bottom:6px;}.about-card .name-sub{font-size:13px;color:var(--khaki2);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}.about-card p{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:12px;}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}.tag{background:rgba(78,122,56,0.25);border:1px solid rgba(78,122,56,0.4);color:var(--khaki2);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:100px;}#location{background:var(--green);padding:96px 32px;color:var(--white);}.location-inner{max-width:1100px;margin:0 auto;}#location h2{color:var(--white);margin-bottom:40px;}#location h2 span{color:var(--orange);}#location .section-label{color:rgba(255,255,255,0.5);}.location-details{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}.loc-row{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;}.loc-icon{width:44px;height:44px;background:rgba(255,255,255,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}.loc-row p{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;}.loc-row strong{color:var(--white);display:block;font-size:15px;font-weight:800;}.loc-maps-btn{display:inline-flex;align-items:center;gap:8px;margin-top:28px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:var(--white);font-size:14px;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none;transition:background 0.2s;}.loc-maps-btn:hover{background:rgba(255,255,255,0.18);}@media (max-width:900px){.location-details{grid-template-columns:repeat(2,1fr);}}#problems{background:var(--white);padding:96px 32px;}.problems-intro{max-width:600px;margin-bottom:56px;}.problems-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}.problem-card{background:var(--cream);border-radius:14px;padding:28px;border:1px solid rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}.problem-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}.problem-icon{font-size:32px;margin-bottom:14px;display:block;}.problem-card h3{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:8px;}.problem-card p{font-size:14px;color:var(--mid);line-height:1.6;}.problem-card .fix-label{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:800;color:var(--green2);letter-spacing:0.5px;text-transform:uppercase;}.problem-card .fix-label::before{content:'✓';display:flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--green2);color:white;border-radius:50%;font-size:10px;font-weight:900;}#price{background:var(--dark);padding:96px 32px;}#price h2{color:var(--white);}#price h2 span{color:var(--orange);}#price .section-label{color:rgba(255,255,255,0.4);}.price-intro{color:rgba(255,255,255,0.6);font-size:16px;line-height:1.6;max-width:500px;margin-top:12px;margin-bottom:48px;}.price-table{max-width:800px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);}.price-category{background:rgba(78,122,56,0.15);padding:12px 24px;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--khaki2);border-bottom:1px solid rgba(255,255,255,0.05);}.price-row{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.15s;}.price-row:hover{background:rgba(255,255,255,0.03);}.price-row:last-child{border-bottom:none;}.price-name{font-size:15px;color:var(--white);font-weight:600;}.price-name small{display:block;font-size:12px;color:rgba(255,255,255,0.4);font-weight:400;margin-top:2px;}.price-val{font-family:'Bebas Neue',cursive;font-size:22px;color:var(--orange);letter-spacing:1px;white-space:nowrap;}.price-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,0.35);max-width:800px;}#how{background:var(--cream);padding:96px 32px;}.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;margin-top:56px;}.step{position:relative;padding-top:8px;}.step-num{font-family:'Bebas Neue',cursive;font-size:72px;color:rgba(58,90,42,0.12);line-height:1;margin-bottom:-12px;display:block;}.step-icon{font-size:28px;margin-bottom:12px;display:block;}.step h3{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:8px;}.step p{font-size:14px;color:var(--mid);line-height:1.65;}.step-connector{display:none;}#materials{background:var(--khaki);padding:96px 32px;}#materials h2{color:var(--white);}#materials h2 span{color:var(--orange2);}#materials .section-label{color:rgba(255,255,255,0.5);}.materials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:48px;}.mat-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:28px;color:var(--white);transition:background 0.2s,transform 0.2s;}.mat-card:hover{background:rgba(255,255,255,0.16);transform:translateY(-3px);}.mat-card .mat-icon{font-size:32px;margin-bottom:14px;display:block;}.mat-card h3{font-size:17px;font-weight:800;margin-bottom:8px;}.mat-card p{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;}#reviews{background:var(--white);padding:96px 32px;}.reviews-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px;}.btn-google-reviews{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid rgba(0,0,0,0.12);color:var(--dark);font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:box-shadow 0.2s,transform 0.15s;white-space:nowrap;flex-shrink:0;}.btn-google-reviews:hover{box-shadow:0 4px 16px rgba(0,0,0,0.13);transform:translateY(-1px);}.review-card--link{display:block;text-decoration:none;color:inherit;}.review-card--link:hover{transform:translateY(-4px);box-shadow:var(--shadow);}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}.review-card{background:var(--cream);border-radius:14px;padding:28px;border:1px solid rgba(0,0,0,0.05);position:relative;}.review-card::before{content:'"';font-family:'Bebas Neue',cursive;font-size:80px;color:rgba(58,90,42,0.1);position:absolute;top:10px;left:20px;line-height:1;}.stars{font-size:16px;margin-bottom:12px;}.review-card p{font-size:15px;color:var(--mid);line-height:1.65;margin-bottom:0;position:relative;}.reviewer{display:none;}.reviewer-name,.avatar,.reviewer-sub{display:none;}#cta{background:var(--orange);padding:96px 32px;text-align:center;position:relative;overflow:hidden;}#cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,0.04) 20px,rgba(255,255,255,0.04) 21px);}#cta h2{color:var(--white);position:relative;margin-bottom:16px;}#cta p{font-size:18px;color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 40px;line-height:1.6;position:relative;}.btn-white{display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--orange);font-weight:800;font-size:16px;padding:16px 36px;border-radius:8px;text-decoration:none;position:relative;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 24px rgba(0,0,0,0.15);}.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.2);}footer{background:var(--dark);padding:48px 32px 32px;color:rgba(255,255,255,0.4);font-size:13px;}footer strong{color:var(--khaki2);}footer a{color:var(--khaki2);text-decoration:none;}footer a:hover{color:var(--orange);}.footer-inner{max-width:1100px;margin:0 auto;}.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:28px;}.footer-logo{font-family:'Bebas Neue',cursive;font-size:28px;color:var(--orange);letter-spacing:2px;display:block;margin-bottom:6px;}.footer-tagline{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;}.impressum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px 40px;margin-bottom:28px;}.impressum-block dt{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:3px;}.impressum-block dd{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.5;margin:0;}.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);font-size:12px;}@media (max-width:768px){.footer-top{flex-direction:column;gap:20px;}.impressum-grid{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;text-align:center;gap:4px;}}@media (max-width:480px){.impressum-grid{grid-template-columns:1fr;}}.datenschutz-wrap{margin-top:24px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}.datenschutz-toggle{background:none;border:none;color:rgba(255,255,255,0.3);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;padding:0;display:flex;align-items:center;gap:6px;transition:color 0.2s;font-family:inherit;}.datenschutz-toggle:hover{color:rgba(255,255,255,0.6);}.ds-arrow{font-size:14px;transition:transform 0.25s;display:inline-block;}.datenschutz-toggle[aria-expanded="true"] .ds-arrow{transform:rotate(180deg);}.datenschutz-body{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;padding:24px;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.06);}.datenschutz-body[hidden]{display:none;}.datenschutz-body h4{font-family:'Bebas Neue',cursive;font-size:22px;color:var(--orange);letter-spacing:1px;margin-bottom:4px;grid-column:1 / -1;}.datenschutz-body h5{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px;margin-top:4px;}.datenschutz-body p{font-size:12px;color:rgba(255,255,255,0.45);line-height:1.65;margin:0;}.datenschutz-body a{color:var(--khaki2);}.datenschutz-body a:hover{color:var(--orange);}@media (max-width:640px){.datenschutz-body{grid-template-columns:1fr;}}@media (max-width:1024px){nav{padding:0 20px;}.nav-links{display:none;}.burger{display:flex;}}@media (max-width:768px){#hero{padding:80px 20px 56px;}.hero-stats{gap:24px;}#about{padding:64px 20px;}.about-grid{grid-template-columns:1fr;gap:36px;}.location-inner{grid-template-columns:1fr;gap:40px;}#location{padding:64px 20px;}#problems,#price,#how,#materials,#reviews,#cta{padding:64px 20px;}.problems-grid,.materials-grid,.reviews-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr;}.price-table{width:100%;}.price-row{flex-direction:column;align-items:flex-start;gap:4px;}.price-val{font-size:28px;}#cta p{font-size:16px;}.footer-inner{flex-direction:column;text-align:center;}}@media (max-width:480px){h1{font-size:52px;}.hero-stats{flex-direction:column;gap:16px;}}</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a class="nav-logo" href="#hero">FahrradTechnik</a>
+<ul class="nav-links">
+<li><a href="#about">Über uns</a></li>
+<li><a href="#location">Standort</a></li>
+<li><a href="#problems">Leistungen</a></li>
+<li><a href="#price">Preise</a></li>
+<li><a href="#how">Ablauf</a></li>
+<li><a href="#materials">Material</a></li>
+<li><a href="#reviews">Bewertungen</a></li>
+<li><a href="#cta">Kontakt</a></li>
+</ul>
+<button class="burger" id="burger" aria-label="Menü öffnen">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about" onclick="closeMenu()">Über uns</a>
+<a href="#location" onclick="closeMenu()">Standort</a>
+<a href="#problems" onclick="closeMenu()">Leistungen</a>
+<a href="#price" onclick="closeMenu()">Preise</a>
+<a href="#how" onclick="closeMenu()">Ablauf</a>
+<a href="#materials" onclick="closeMenu()">Material</a>
+<a href="#reviews" onclick="closeMenu()">Bewertungen</a>
+<a href="#cta" onclick="closeMenu()">Kontakt</a>
+</div>
+<section id="hero">
+<div class="hero-content">
+<div class="hero-text">
+<div class="hero-badge">Fahrradreparatur Wien – Neulinggasse 24, 1030</div>
+<h1>Dein Rad.<br><span>Repariert.</span><br>Fertig.</h1>
+<p class="hero-sub">
+Professionelle Fahrradreparatur, Tuning und Rahmenbau in Wien Landstraße.
+Werkstatt · Tuningsalon · Rahmenbau – alle Marken und Typen, Mo–Sa 10–19 Uhr.
+</p>
+<div class="hero-ctas">
+<a class="btn-primary" href="tel:+436645336008">📞 0664 / 533 60 08</a>
+<a class="btn-secondary" href="#price">Preisliste ansehen →</a>
+</div>
+<div class="hero-stats">
+<div class="stat">
+<div class="stat-num">1400+</div>
+<div class="stat-label">Reparaturen / Jahr</div>
+</div>
+<div class="stat">
+<div class="stat-num">28</div>
+<div class="stat-label">Jahre Erfahrung</div>
+</div>
+<div class="stat">
+<div class="stat-num">1–3</div>
+<div class="stat-label">Tage Wartezeit</div>
+</div>
+<div class="stat">
+<div class="stat-num">4.9★</div>
+<div class="stat-label">Google-Bewertung</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="section-inner">
+<div class="section-label">Wer wir sind</div>
+<h2>Echter Profi.<br><span>Keine Tricks.</span></h2>
+<div class="about-grid">
+<div class="about-text">
+<p>
+FahrradTechnik Wien ist eine unabhängige Werkstatt in Wien Landstraße – kein Franchise, keine Kette.
+Hier arbeitet Johannes Neugebauer, ein echter Mechaniker mit langjähriger Erfahrung,
+dem es wichtig ist, dass dein Rad danach wirklich funktioniert.
+</p>
+<p>
+Werkstatt, Tuningsalon und Rahmenbau unter einem Dach.
+Wir reparieren alles: Citybikes, Rennräder, Mountainbikes und Vintage-Räder.
+Kleinere Reparaturen oft direkt am selben Tag – ohne Terminvormerkung.
+</p>
+<p>
+Keine versteckten Kosten. Vor jeder Reparatur gibt es eine klare Kosteneinschätzung.
+Du entscheidest, was gemacht wird.
+</p>
+<div class="tags">
+<span class="tag">Citybike</span>
+<span class="tag">Rennrad</span>
+<span class="tag">MTB</span>
+<span class="tag">Vintage</span>
+<span class="tag">Trekkingrad</span>
+<span class="tag">Fixie</span>
+<span class="tag">Rahmenbau</span>
+<span class="tag">Tuning</span>
+</div>
+</div>
+<div class="about-card">
+<div class="master-photo-wrap">
+<img src="FOTO_JOHANNES.jpg" alt="Johannes Neugebauer – Fahrradmechaniker"
+class="master-photo"
+onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div class="master-photo-fallback">
+<span>📷</span>
+<span>Foto des Meisters</span>
+<span style="font-size:11px;opacity:0.5">src="FOTO_JOHANNES.jpg" ersetzen</span>
+</div>
+</div>
+<h3>Johannes Neugebauer</h3>
+<div class="name-sub">Fahrradmechaniker · Inhaber</div>
+<p>
+Werkstatt · Tuningsalon · Rahmenbau.<br>
+Neulinggasse 24, 1030 Wien
+</p>
+<p>
+„Ich repariere kein Fahrrad, das ich danach nicht selbst fahren würde."
+</p>
+<div class="tags">
+<span class="tag">Rahmenbau</span>
+<span class="tag">Tuningsalon</span>
+<span class="tag">Alle Marken</span>
+</div>
+</div>
+</div>
+<div class="gallery">
+<div class="gallery-item gallery-item--wide">
+<img src="photo_werkstatt.jpeg" alt="Werkstatt FahrradTechnik Wien – Innenansicht">
+<div class="gallery-caption">Die Werkstatt</div>
+</div>
+<div class="gallery-item">
+<img src="photo_rennrad.jpeg" alt="Rennrad hängt an der Wand – FahrradTechnik Wien">
+<div class="gallery-caption">Rennrad-Service</div>
+</div>
+<div class="gallery-item">
+<img src="photo_bikes.jpeg" alt="Verschiedene Fahrräder in der Werkstatt">
+<div class="gallery-caption">Alle Typen willkommen</div>
+</div>
+</div>
+</div>
+</section>
+<section id="location">
+<div class="location-inner">
+<div class="section-label">Wo wir sind</div>
+<h2>Mitten in <span>Wien.</span></h2>
+<div class="location-details">
+<div class="loc-row">
+<div class="loc-icon">📍</div>
+<div>
+<strong>Adresse</strong>
+<p>Neulinggasse 24/1<br>1030 Wien, Landstraße</p>
+</div>
+</div>
+<div class="loc-row">
+<div class="loc-icon">🕐</div>
+<div>
+<strong>Öffnungszeiten</strong>
+<p>Mo–Sa: 10:00–19:00 Uhr<br>So: geschlossen</p>
+</div>
+</div>
+<div class="loc-row">
+<div class="loc-icon">📞</div>
+<div>
+<strong>Telefon</strong>
+<p><a href="tel:+436645336008" style="color:var(--orange2);font-weight:800;">0664 / 533 60 08</a></p>
+</div>
+</div>
+<div class="loc-row">
+<div class="loc-icon">🚲</div>
+<div>
+<strong>Anreise</strong>
+<p>Tram Ungargasse/<br>Neulinggasse – 1 Min.</p>
+</div>
+</div>
+</div>
+<a class="loc-maps-btn"
+href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8"
+target="_blank" rel="noopener noreferrer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+In Google Maps öffnen ↗
+</a>
+</div>
+</section>
+<section id="problems">
+<div class="section-inner">
+<div class="problems-intro">
+<div class="section-label">Was wir reparieren</div>
+<h2>Welches <span>Problem</span><br>hast du?</h2>
+</div>
+<div class="problems-grid">
+<div class="problem-card">
+<span class="problem-icon">🔴</span>
+<h3>Platten Reifen</h3>
+<p>Schlauch gewechselt, Ventil geprüft, Reifensitz kontrolliert. Oft innerhalb einer Stunde erledigt.</p>
+<span class="fix-label">Schnellreparatur möglich</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">⛓️</span>
+<h3>Kette springt / reißt</h3>
+<p>Kettenverschleiß prüfen, Kette ersetzen oder reparieren, Schaltwerk einstellen.</p>
+<span class="fix-label">Am selben Tag</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🛑</span>
+<h3>Bremsen greifen nicht</h3>
+<p>Bremsbeläge, Bremszüge, Hydraulik – wir überprüfen alles und stellen sicher ein.</p>
+<span class="fix-label">Sicherheitscheck inklusive</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🔧</span>
+<h3>Schaltung hakt</h3>
+<p>Schaltwerk / Umwerfer einstellen, Züge prüfen, Kassettenreinigung falls nötig.</p>
+<span class="fix-label">Feineinstellung gratis</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🎯</span>
+<h3>Lenker / Sattel wackelt</h3>
+<p>Anzugsmomente prüfen, Vorbauten und Sattelstützen korrekt montieren.</p>
+<span class="fix-label">Schnell und günstig</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">⚡</span>
+<h3>E-Bike Probleme</h3>
+<p>Motor, Akku, Display – wir arbeiten mit Bosch, Shimano Steps und Bafang Systemen.</p>
+<span class="fix-label">Zertifizierter Service</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🔩</span>
+<h3>Rad knirscht / quietscht</h3>
+<p>Geräuschdiagnose, Lager prüfen, Tretlager und Pedalachsen schmieren oder tauschen.</p>
+<span class="fix-label">Diagnose kostenlos</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🔄</span>
+<h3>Jahresinspektion</h3>
+<p>Komplettcheck aller Komponenten – ideal vor dem Frühling oder nach dem Winter.</p>
+<span class="fix-label">Wartungspaket ab 49 €</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🏔️</span>
+<h3>Stoßdämpfer / Federung</h3>
+<p>Luftdruck einstellen, Wartungsintervalle, Leckagen reparieren, Service Kits einbauen.</p>
+<span class="fix-label">MTB-Spezialist</span>
+</div>
+</div>
+</div>
+</section>
+<section id="price">
+<div class="section-inner">
+<div class="section-label">Preisliste</div>
+<h2>Faire <span>Preise.</span></h2>
+<p class="price-intro">Alle Preise inkl. MwSt. Materialkosten werden separat ausgewiesen. Vor jeder Reparatur gibt es eine kostenlose Einschätzung.</p>
+<div class="price-table">
+<div class="price-category">⚡ Schnellreparaturen</div>
+<div class="price-row">
+<div class="price-name">Schlauch wechseln<small>inkl. Reifen abnehmen und montieren</small></div>
+<div class="price-val">ab 12 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Flicken (Schlauch reparieren)<small>Standardschlauch</small></div>
+<div class="price-val">8 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Kette reparieren / verbinden<small>Kettenniete oder Kettenschloss</small></div>
+<div class="price-val">10 €</div>
+</div>
+<div class="price-category">🔧 Bremsen & Schaltung</div>
+<div class="price-row">
+<div class="price-name">Bremsen einstellen<small>Felgenbremse oder Scheibenbremse</small></div>
+<div class="price-val">15–25 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Bremsbeläge tauschen<small>pro Achse, ohne Material</small></div>
+<div class="price-val">12 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Hydraulikbremse entlüften<small>inkl. Bremsflüssigkeit</small></div>
+<div class="price-val">35 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Schaltung einstellen<small>Front + Rear Derailleur</small></div>
+<div class="price-val">20–35 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Kette + Kassette tauschen<small>ohne Material</small></div>
+<div class="price-val">25 €</div>
+</div>
+<div class="price-category">⚙️ Lager & Tretlager</div>
+<div class="price-row">
+<div class="price-name">Tretlager tauschen<small>BSA/Press-fit, ohne Material</small></div>
+<div class="price-val">25–40 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Nabenlager reparieren / tauschen<small>pro Nabe</small></div>
+<div class="price-val">20–35 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Steuersatz tauschen<small>inkl. Einpressen</small></div>
+<div class="price-val">35 €</div>
+</div>
+<div class="price-category">🔄 Wartungspakete</div>
+<div class="price-row">
+<div class="price-name">Basis-Inspektion<small>Bremsen, Schaltung, Reifendruck, Beleuchtung</small></div>
+<div class="price-val">49 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Komplett-Service<small>Alles oben + Lager, Reinigung, Schmierung</small></div>
+<div class="price-val">89 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Generalüberholung<small>Komplette Demontage, Reinigung, Aufbau</small></div>
+<div class="price-val">ab 150 €</div>
+</div>
+<div class="price-category">⚡ E-Bike Service</div>
+<div class="price-row">
+<div class="price-name">E-Bike Diagnose<small>Fehlerauslesen, Systemcheck</small></div>
+<div class="price-val">25 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">E-Bike Basis-Inspektion<small>Antrieb + Mechanik</small></div>
+<div class="price-val">69 €</div>
+</div>
+</div>
+<p class="price-note">* Arbeitszeit: 65 €/Stunde. Materialkosten werden zusätzlich berechnet und vorher besprochen. Preise können je nach Fahrradtyp variieren.</p>
+</div>
+</section>
+<section id="how">
+<div class="section-inner">
+<div class="section-label">So läuft's ab</div>
+<h2>Einfach & <span>transparent.</span></h2>
+<div class="steps">
+<div class="step">
+<span class="step-num">01</span>
+<span class="step-icon">📞</span>
+<h3>Anrufen oder vorbeikommen</h3>
+<p>Ruf kurz an oder komm einfach vorbei. Für größere Reparaturen empfehlen wir einen kurzen Anruf vorab, damit wir Zeit für dich einplanen können.</p>
+</div>
+<div class="step">
+<span class="step-num">02</span>
+<span class="step-icon">🔍</span>
+<h3>Kostenlose Diagnose</h3>
+<p>Wir schauen uns dein Rad an und erklären dir, was kaputt ist – auf Deutsch und verständlich. Keine Überraschungen, keine Fachbegriff-Verwirrung.</p>
+</div>
+<div class="step">
+<span class="step-num">03</span>
+<span class="step-icon">💬</span>
+<h3>Klare Kosteneinschätzung</h3>
+<p>Du bekommst einen ehrlichen Preis, bevor wir anfangen. Du entscheidest, was gemacht wird. Kein Druck, kein Upselling.</p>
+</div>
+<div class="step">
+<span class="step-num">04</span>
+<span class="step-icon">🔧</span>
+<h3>Reparatur</h3>
+<p>Wir reparieren dein Rad – sorgfältig und mit hochwertigen Teilen. Kleine Jobs oft noch am selben Tag, größere innerhalb von 1–3 Werktagen.</p>
+</div>
+<div class="step">
+<span class="step-num">05</span>
+<span class="step-icon">✅</span>
+<h3>Abholung & Check</h3>
+<p>Wir erklären dir kurz, was gemacht wurde und geben Tipps für die Pflege. Du fährst mit einem Rad weg, auf das du dich verlassen kannst.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="materials">
+<div class="section-inner">
+<div class="section-label">Materialien & Teile</div>
+<h2>Nur <span>echte Qualität.</span></h2>
+<div class="materials-grid">
+<div class="mat-card">
+<span class="mat-icon">⛓️</span>
+<h3>Shimano & SRAM Antriebe</h3>
+<p>Ketten, Kassetten, Schaltwerke und Kurbelarme ausschließlich von führenden Marken. Langlebig und weltweit kompatibel.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🏎️</span>
+<h3>Continental & Schwalbe Reifen</h3>
+<p>Reifen und Schläuche von den besten deutschen Herstellern. Für Straße, Schotter und Gelände.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🛑</span>
+<h3>Magura & Shimano Hydraulik</h3>
+<p>Original-Bremsflüssigkeit und zertifizierte Bremsbeläge. Kein Billigersatz – nur was auch hält.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🔩</span>
+<h3>Edelstahl-Schrauben & Befestigungen</h3>
+<p>Keine Zinkschrauben, die nach einem Winter verrosten. Wir verwenden Edelstahl und TI-Schrauben, wo sinnvoll.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🧴</span>
+<h3>Professionelle Schmierstoffe</h3>
+<p>Finish Line, Motorex und Weldtite – die richtigen Öle und Fette für jede Anwendung. Kein WD-40 auf Lagern.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">⚡</span>
+<h3>Original E-Bike Komponenten</h3>
+<p>Für Bosch, Shimano Steps und Bafang verwenden wir ausschließlich Original-Ersatzteile und Service-Kits.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reviews">
+<div class="section-inner">
+<div class="reviews-header">
+<div>
+<div class="section-label">Kundenstimmen</div>
+<h2>Was andere <span>sagen.</span></h2>
+</div>
+<a class="btn-google-reviews"
+href="https://www.google.com/maps/place/Fahrradtechnik+Johannes+Neugebauer/@48.1992093,16.3883625,17z/data=!4m7!3m6!1s0x476d0790e1f8cdeb:0x800b395eb1931adc!8m2!3d48.1992093!4d16.3883625!9m1!1b1"
+target="_blank" rel="noopener noreferrer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+Alle Bewertungen auf Google
+</a>
+</div>
+<div class="reviews-grid">
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Johannes hat mein schon sehr mitgenommenes Rennrad so hergerichtet, dass es sich besser fährt als am ersten Tag! Er arbeitet mit so einer Leidenschaft wie ich es noch nie erlebt habe. Man merkt, er ist ein absoluter Profi. Ich kann ihn nur wärmstens weiterempfehlen.</p>
+<div class="reviewer">
+<div class="avatar">A</div>
+<div>
+<div class="reviewer-name">Anja</div>
+<div class="reviewer-sub">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Absolute Empfehlung! Johannes hat mir sehr schnell geholfen, er arbeitet super transparent und ist sehr sympathisch.</p>
+<div class="reviewer">
+<div class="avatar">K</div>
+<div>
+<div class="reviewer-name">Katharina</div>
+<div class="reviewer-sub">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Johannes ist ein wirklich kompetenter und erfahrener Fahrradmechaniker. Er hat mein Trek-Mountainbike aus den 90ern sanft renoviert und wieder in einen coolen Renner verwandelt. Ein Profi für alle Probleme rund ums Fahrrad!</p>
+<div class="reviewer">
+<div class="avatar">M</div>
+<div>
+<div class="reviewer-name">Michael</div>
+<div class="reviewer-sub">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Johannes arbeitet mit einer Liebe zum Detail, die ich unfassbar bewundere. Er nimmt sich Zeit für jeden seiner Kund:innen. In dieser Werkstatt wird jedes Fahrrad mit Liebe repariert, getunt und verbessert. Beim nächsten Problem komme ich nur hier her!</p>
+<div class="reviewer">
+<div class="avatar">S</div>
+<div>
+<div class="reviewer-name">Sandra</div>
+<div class="reviewer-sub">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Der Fahrrad-Formel-1-Mechaniker Wiens! Johannes werde ich ab jetzt alles in Sachen Bike anvertrauen. Altes verrostetes Stadtrad von 1980? Sofort zu ihm. Neues 3000 €-Mountainbike? Er optimiert alles. Bin von dieser Werkstatt absolut überzeugt.</p>
+<div class="reviewer">
+<div class="avatar">T</div>
+<div>
+<div class="reviewer-name">Thomas</div>
+<div class="reviewer-sub">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer">
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<p>Super persönliche Werkstatt! Alles sehr unkompliziert und professionell. Hoher Qualitätsanspruch aber günstig – hier werden keine billigen Teile verbaut!</p>
+<div class="reviewer">
+<div class="avatar">L</div>
+<div>
+<div class="reviewer-name">Lukas</div>
+<div class="reviewer-sub">Google-Bewertung</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section id="cta">
+<h2>Dein Rad wartet.</h2>
+<p>Ruf einfach an oder komm vorbei. Kostenlose Einschätzung vor jeder Reparatur – kein Druck, kein Upselling.</p>
+<a class="btn-white" href="tel:+436645336008">📞 0664 / 533 60 08</a>
+<br><br>
+<span style="color:rgba(255,255,255,0.6); font-size:14px; position:relative;">Neulinggasse 24, 1030 Wien · Mo–Sa 10–19 Uhr</span>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<span class="footer-logo">FahrradTechnik</span>
+<span class="footer-tagline">Werkstatt · Tuningsalon · Rahmenbau</span>
+</div>
+<div style="color:rgba(255,255,255,0.5); line-height:1.7; font-size:14px;">
+<strong>Johannes Maximilian Neugebauer</strong><br>
+Neulinggasse 24/1, 1030 Wien<br>
+<a href="tel:+436645336008">0664 / 533 60 08</a>
+</div>
+</div>
+<dl class="impressum-grid">
+<div class="impressum-block">
+<dt>Firmenname</dt>
+<dd>Johannes Maximilian Neugebauer</dd>
+</div>
+<div class="impressum-block">
+<dt>Gewerbewortlaut</dt>
+<dd>Fahrradtechnik</dd>
+</div>
+<div class="impressum-block">
+<dt>Berufszweig</dt>
+<dd>Zweiradmechaniker, Fahrradtechniker</dd>
+</div>
+<div class="impressum-block">
+<dt>Adresse</dt>
+<dd>1030 Wien, Neulinggasse 24/1</dd>
+</div>
+<div class="impressum-block">
+<dt>GISA-Zahl</dt>
+<dd>32548273</dd>
+</div>
+<div class="impressum-block">
+<dt>GLN</dt>
+<dd>9110028664960</dd>
+</div>
+<div class="impressum-block">
+<dt>Behörde gem. ECG</dt>
+<dd>Magistratisches Bezirksamt des III. Bezirkes</dd>
+</div>
+<div class="impressum-block">
+<dt>Gewerbeberechtigung</dt>
+<dd>Seit 01.04.2020</dd>
+</div>
+</dl>
+<div class="footer-bottom">
+<span>© 2026 Johannes Maximilian Neugebauer</span>
+<span>Alle Preise inkl. MwSt. · Irrtümer vorbehalten</span>
+</div>
+<div class="datenschutz-wrap">
+<button class="datenschutz-toggle" onclick="toggleDatenschutz()" aria-expanded="false">
+Datenschutzerklärung <span class="ds-arrow">▾</span>
+</button>
+<div class="datenschutz-body" id="datenschutz" hidden>
+<h4>Datenschutzerklärung</h4>
+<h5>1. Verantwortlicher</h5>
+<p>Johannes Maximilian Neugebauer<br>
+Neulinggasse 24/1, 1030 Wien<br>
+Tel.: 0664 / 533 60 08</p>
+<h5>2. Erhebung und Verarbeitung personenbezogener Daten</h5>
+<p>Diese Website erhebt keine personenbezogenen Daten über Tracking, Cookies oder Analysetools. Beim Aufruf der Website werden vom Hosting-Anbieter technisch notwendige Zugriffsdaten (IP-Adresse, Uhrzeit, aufgerufene Seite) im Rahmen der gesetzlichen Aufbewahrungspflichten protokolliert. Diese Daten werden nicht an Dritte weitergegeben und ausschließlich zur Sicherstellung des Betriebs verwendet.</p>
+<h5>3. Kontaktaufnahme</h5>
+<p>Wenn Sie uns per Telefon kontaktieren, werden die von Ihnen mitgeteilten Daten (Name, Anliegen) ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht gespeichert oder weitergegeben.</p>
+<h5>4. Ihre Rechte</h5>
+<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Beschwerden können an die österreichische Datenschutzbehörde gerichtet werden: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+<h5>5. Externe Links</h5>
+<p>Diese Website enthält keine eingebetteten Social-Media-Plugins, Tracking-Pixel oder externe Werbemittel. Für den Inhalt verlinkter externer Seiten übernehmen wir keine Haftung.</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+function toggleDatenschutz() {
+const body = document.getElementById('datenschutz');
+const btn = body.previousElementSibling;
+const isHidden = body.hidden;
+body.hidden = !isHidden;
+btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+}
+// ── Burger menu ──
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+burger.classList.toggle('open');
+mobileMenu.classList.toggle('open');
+});
+function closeMenu() {
+burger.classList.remove('open');
+mobileMenu.classList.remove('open');
+}
+// ── Smooth scroll for ALL nav links (desktop + mobile) ──
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+link.addEventListener('click', function(e) {
+const targetId = this.getAttribute('href').slice(1);
+if (!targetId) return;
+const target = document.getElementById(targetId);
+if (!target) return;
+e.preventDefault();
+closeMenu();
+const navH = document.querySelector('nav').offsetHeight;
+const top = target.getBoundingClientRect().top + window.scrollY - navH;
+window.scrollTo({ top, behavior: 'smooth' });
+});
+});
+// ── Active nav highlight on scroll ──
+const sections = document.querySelectorAll('section[id]');
+const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+window.addEventListener('scroll', () => {
+const navH = document.querySelector('nav').offsetHeight;
+let current = '';
+sections.forEach(s => {
+if (window.scrollY >= s.offsetTop - navH - 10) current = s.id;
+});
+allNavLinks.forEach(a => {
+const isActive = a.getAttribute('href') === '#' + current;
+a.style.color = isActive ? 'var(--orange2)' : '';
+});
+}, { passive: true });
+</script>
+</body>
+</html>
