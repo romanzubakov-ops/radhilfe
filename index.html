@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="de" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">FahrradTechnik Wien – Fahrrad Reparatur &amp; Service | Johannes Neugebauer</title>
+<meta name="description" id="page-desc" content="Fahrradwerkstatt Wien – professionelle Fahrrad-Reparatur, Fahrrad-Service und Rahmenbau. Alle Marken. Mo–Sa 10–19 Uhr. Neulinggasse 24, 1030 Wien. ☎ 0664 533 60 08">
+<link rel="canonical" href="https://fahrradtechnik-neugebauer.at">
+<link rel="preload" href="fonts/BebasNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Nunito-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Nunito-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Nunito-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<style>/* Bebas Neue — fallback Arial Narrow подогнан по метрикам */@font-face{font-family:'Bebas Neue';src:url('fonts/BebasNeue-Regular.woff2') format('woff2'),url('fonts/BebasNeue-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;ascent-override:80%;descent-override:20%;line-gap-override:0%;size-adjust:97%;}/* Nunito Regular */@font-face{font-family:'Nunito';src:url('fonts/Nunito-Regular.woff2') format('woff2'),url('fonts/Nunito-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;ascent-override:103%;descent-override:35%;line-gap-override:0%;size-adjust:100%;}/* Nunito SemiBold */@font-face{font-family:'Nunito';src:url('fonts/Nunito-SemiBold.woff2') format('woff2'),url('fonts/Nunito-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap;ascent-override:103%;descent-override:35%;line-gap-override:0%;size-adjust:100%;}/* Nunito Bold */@font-face{font-family:'Nunito';src:url('fonts/Nunito-Bold.woff2') format('woff2'),url('fonts/Nunito-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;ascent-override:103%;descent-override:35%;line-gap-override:0%;size-adjust:100%;}/* Nunito ExtraBold */@font-face{font-family:'Nunito';src:url('fonts/Nunito-ExtraBold.woff2') format('woff2'),url('fonts/Nunito-ExtraBold.ttf') format('truetype');font-weight:800;font-style:normal;font-display:swap;ascent-override:103%;descent-override:35%;line-gap-override:0%;size-adjust:100%;}.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}.lang-switcher{display:flex;gap:4px;margin:0;}.lang-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.55);font-size:12px;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:6px;cursor:pointer;transition:all 0.2s;font-family:inherit;text-transform:uppercase;}.lang-btn:hover{background:rgba(255,255,255,0.16);color:var(--white);}.lang-btn.active{background:var(--orange);border-color:var(--orange);color:#fff;}</style>
+<style>:root{--white:#F8F5EE;--cream:#EDE8DC;--green:#3A5A2A;--green2:#4E7A38;--khaki:#7D8C5C;--khaki2:#A5B07A;--orange:#E8621A;--orange2:#F5883A;--dark:#1E2318;--mid:#3C3C30;--shadow:0 4px 32px rgba(30,35,24,0.13);}.skip-link{position:absolute;top:-100px;left:16px;background:var(--orange);color:white;font-weight:800;font-size:14px;padding:8px 16px;border-radius:0 0 8px 8px;text-decoration:none;z-index:9999;transition:top 0.2s;}.skip-link:focus{top:0;}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'Nunito',Arial,sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden;}/* ─── NAV ─── */nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--dark);display:flex;align-items:center;padding:0 32px;height:60px;box-shadow:0 2px 16px rgba(0,0,0,0.3);}/* выравниваем содержимое навбара по той же ширине что и секции */.nav-inner{max-width:1100px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}.nav-logo{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:26px;color:var(--orange);letter-spacing:2px;text-decoration:none;}.nav-links{display:flex;gap:6px;list-style:none;}.nav-links a{color:var(--khaki2);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:0.5px;padding:6px 10px;border-radius:4px;transition:color 0.2s,background 0.2s;text-transform:uppercase;}.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.07);}/* hamburger */.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}.burger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.3s,opacity 0.3s;}.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}.burger.open span:nth-child(2){opacity:0;}.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--dark);z-index:99;flex-direction:column;padding:16px 24px 24px;gap:4px;box-shadow:0 8px 24px rgba(0,0,0,0.3);}.mobile-menu.open{display:flex;}.mobile-menu a{color:var(--khaki2);text-decoration:none;font-size:15px;font-weight:700;letter-spacing:0.5px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);text-transform:uppercase;}.mobile-menu a:last-child{border-bottom:none;}/* ─── SECTIONS ─── */section{scroll-margin-top:60px;}/* ─── HERO ─── */#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 32px 60px;}/* фото мастерской как фон */#hero::before{content:'';position:absolute;inset:0;background-image:url('photo_werkstatt.jpeg');background-size:cover;background-position:center 30%;filter:brightness(0.45) saturate(0.7);z-index:0;}.avif #hero::before{background-image:url('photo_werkstatt.avif');}/* градиент слева под текст */#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,25,15,0.93) 0%,rgba(20,25,15,0.78) 42%,rgba(20,25,15,0.12) 72%,transparent 100%);z-index:1;}.hero-content{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto;}/* текст не шире 600px */.hero-text{max-width:600px;}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,98,26,0.15);border:1px solid rgba(232,98,26,0.4);color:var(--orange2);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:28px;}.hero-badge::before{content:'🔧';}h1{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:clamp(56px,9vw,110px);line-height:0.93;color:var(--white);margin-bottom:24px;}h1 span{color:var(--orange);}.hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--khaki2);line-height:1.6;max-width:520px;margin-bottom:40px;}.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--white);font-weight:800;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s,transform 0.15s;box-shadow:0 4px 20px rgba(232,98,26,0.35);}.btn-primary:hover{background:var(--orange2);transform:translateY(-2px);}.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:var(--white);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s;}.btn-secondary:hover{background:rgba(255,255,255,0.12);}.hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap;}.stat{text-align:left;}.stat-num{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:42px;color:var(--orange);line-height:1;}.stat-label{font-size:12px;font-weight:700;color:var(--khaki2);letter-spacing:1px;text-transform:uppercase;}/* ─── MASTER PHOTO ─── */.master-photo-wrap{width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;margin-bottom:20px;background:rgba(255,255,255,0.05);}.master-photo{width:100%;height:100%;object-fit:cover;display:block;}.master-photo-fallback{display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:rgba(255,255,255,0.3);font-size:32px;font-weight:700;text-align:center;border:2px dashed rgba(255,255,255,0.1);border-radius:12px;padding:16px;}.master-photo-fallback span{font-size:13px;}/* ─── GALLERY ─── */.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px;gap:12px;margin-top:48px;border-radius:16px;overflow:hidden;}.gallery-item{position:relative;overflow:hidden;border-radius:12px;}.gallery-item--wide{grid-column:1;}.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;}.gallery-item:hover img{transform:scale(1.04);}.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,25,15,0.75));color:white;font-size:13px;font-weight:700;padding:20px 14px 10px;letter-spacing:0.5px;}@media (max-width:768px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;}.gallery-item--wide{grid-column:1 / -1;}}@media (max-width:480px){.gallery{grid-template-columns:1fr;grid-template-rows:auto;}.gallery-item{height:220px;}.gallery-item--wide{grid-column:1;}}/* ─── ABOUT ─── */#about{background:var(--cream);padding:96px 32px;}.section-inner{max-width:1100px;margin:0 auto;}.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--dark);margin-bottom:16px;}.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--orange);border-radius:2px;}h2{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:clamp(36px,5vw,64px);color:var(--dark);line-height:1;margin-bottom:20px;}h2 span{color:var(--green);}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px;}.about-text p{font-size:16px;line-height:1.75;color:var(--mid);margin-bottom:16px;}.about-card{background:var(--dark);border-radius:16px;padding:40px;color:var(--white);position:relative;overflow:hidden;}.about-card::before{content:'🚲';position:absolute;font-size:120px;right:-10px;bottom:-20px;opacity:0.08;line-height:1;}.about-card h3{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:32px;color:var(--orange);margin-bottom:6px;}.about-card .name-sub{font-size:13px;color:#D4D4C0;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}.about-card p{font-size:15px;color:#E0DED0;line-height:1.7;margin-bottom:12px;}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}.tag{background:rgba(78,122,56,0.15);border:1px solid rgba(78,122,56,0.5);color:#2C3A1A;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:100px;}/* ─── LOCATION ─── */#location{background:var(--green);padding:96px 32px;color:var(--white);}.location-inner{max-width:1100px;margin:0 auto;}#location h2{color:var(--white);margin-bottom:40px;}#location h2 span{color:var(--orange);}#location .section-label{color:#ffffff;}.location-details{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}.loc-row{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;}.loc-icon{width:44px;height:44px;background:rgba(255,255,255,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}.loc-row p{font-size:14px;color:#ffffff;line-height:1.6;margin:0;}.loc-row strong{color:var(--white);display:block;font-size:15px;font-weight:800;}.loc-maps-btn{display:inline-flex;align-items:center;gap:8px;margin-top:28px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:var(--white);font-size:14px;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none;transition:background 0.2s;}.loc-maps-btn:hover{background:rgba(255,255,255,0.18);}@media (max-width:900px){.location-details{grid-template-columns:repeat(2,1fr);}}/* ─── PROBLEMS ─── */#problems{background:var(--white);padding:96px 32px;}.problems-intro{max-width:600px;margin-bottom:56px;}.problems-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}.problem-card{background:var(--cream);border-radius:14px;padding:28px;border:1px solid rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}.problem-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}.problem-icon{font-size:32px;margin-bottom:14px;display:block;}.problem-card h3{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:8px;}.problem-card p{font-size:14px;color:var(--mid);line-height:1.6;}.problem-card .fix-label{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:800;color:#2A5010;letter-spacing:0.5px;text-transform:uppercase;}.problem-card .fix-label::before{content:'✓';display:flex;align-items:center;justify-content:center;width:18px;height:18px;background:#2A5010;color:white;border-radius:50%;font-size:10px;font-weight:900;}/* ─── PRICE ─── */#price{background:var(--dark);padding:96px 32px;}#price h2{color:var(--white);}#price h2 span{color:var(--orange);}#price .section-label{color:#E0DED0;}.price-intro{color:#E0DED0;font-size:16px;line-height:1.6;max-width:500px;margin-top:12px;margin-bottom:48px;}.price-table{max-width:800px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);}.price-category{background:rgba(78,122,56,0.15);padding:12px 24px;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#D4D4C0;border-bottom:1px solid rgba(255,255,255,0.05);}.price-row{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.15s;}.price-row:hover{background:rgba(255,255,255,0.03);}.price-row:last-child{border-bottom:none;}.price-name{font-size:15px;color:var(--white);font-weight:600;}.price-name small{display:block;font-size:12px;color:#C8C8B0;font-weight:400;margin-top:2px;}.price-val{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:22px;color:var(--orange);letter-spacing:1px;white-space:nowrap;}.price-note{margin-top:20px;font-size:13px;color:#D4D4C0;max-width:800px;}/* ─── HOW IT WORKS ─── */#how{background:var(--cream);padding:96px 32px;}.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;margin-top:56px;}.step{position:relative;padding-top:8px;}.step-num{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:72px;color:rgba(58,90,42,0.12);line-height:1;margin-bottom:-12px;display:block;}.step-icon{font-size:28px;margin-bottom:12px;display:block;}.step h3{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:8px;}.step p{font-size:14px;color:var(--mid);line-height:1.65;}.step-connector{display:none;}/* ─── MATERIALS ─── */#materials{background:var(--khaki);padding:96px 32px;}#materials h2{color:var(--white);}#materials h2 span{color:var(--orange2);}#materials .section-label{color:#ffffff;}.materials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:48px;}.mat-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:28px;color:var(--white);transition:background 0.2s,transform 0.2s;}.mat-card:hover{background:rgba(255,255,255,0.16);transform:translateY(-3px);}.mat-card .mat-icon{font-size:32px;margin-bottom:14px;display:block;}.mat-card h3{font-size:17px;font-weight:800;margin-bottom:8px;color:#ffffff;}.mat-card p{font-size:14px;color:#ffffff;line-height:1.6;}/* ─── TESTIMONIALS ─── */#reviews{background:var(--white);padding:96px 32px;}.reviews-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px;}.btn-google-reviews{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid rgba(0,0,0,0.12);color:var(--dark);font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:box-shadow 0.2s,transform 0.15s;white-space:nowrap;flex-shrink:0;}.btn-google-reviews:hover{box-shadow:0 4px 16px rgba(0,0,0,0.13);transform:translateY(-1px);}.review-card--link{display:block;text-decoration:none;color:inherit;}.review-card--link:hover{transform:translateY(-4px);box-shadow:var(--shadow);}.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}.review-card{background:var(--cream);border-radius:14px;padding:28px;border:1px solid rgba(0,0,0,0.05);position:relative;}.review-card::before{content:'"';font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:80px;color:rgba(58,90,42,0.1);position:absolute;top:10px;left:20px;line-height:1;}.stars{font-size:16px;margin-top:12px;margin-bottom:0;}.review-card p{font-size:15px;color:var(--mid);line-height:1.65;margin-bottom:0;position:relative;}.reviewer{display:none;}.reviewer-name,.avatar,.reviewer-sub{display:none;}/* ─── CTA ─── */#cta{background:var(--orange);padding:96px 32px;text-align:center;position:relative;overflow:hidden;}#cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,0.04) 20px,rgba(255,255,255,0.04) 21px);}#cta h2{color:var(--white);position:relative;margin-bottom:16px;}#cta p{font-size:18px;color:rgba(255,255,255,0.85);max-width:520px;margin:0 auto 40px;line-height:1.6;position:relative;}.btn-white{display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--orange);font-weight:800;font-size:16px;padding:16px 36px;border-radius:8px;text-decoration:none;position:relative;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 24px rgba(0,0,0,0.15);}.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.2);}/* ─── FOOTER ─── */footer{background:var(--dark);padding:48px 32px 32px;color:#D4D4C0;font-size:13px;}footer strong{color:#E0DED0;}footer a{color:#D4D4C0;text-decoration:none;}footer a:hover{color:var(--orange);}.footer-inner{max-width:1100px;margin:0 auto;}.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:28px;}.footer-logo{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:28px;color:var(--orange);letter-spacing:2px;display:block;margin-bottom:6px;}.footer-tagline{font-size:12px;color:#D4D4C0;letter-spacing:1px;text-transform:uppercase;}.impressum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px 40px;margin-bottom:28px;}.impressum-block dt{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#D4D4C0;margin-bottom:3px;}.impressum-block dd{font-size:13px;color:#E0DED0;line-height:1.5;margin:0;}.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);font-size:12px;}@media (max-width:768px){.footer-top{flex-direction:column;gap:20px;}.impressum-grid{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;text-align:center;gap:4px;}}@media (max-width:480px){.impressum-grid{grid-template-columns:1fr;}}/* ─── FOOTER LEGAL (impressum + datenschutz) ─── */.footer-contact{color:rgba(255,255,255,0.5);line-height:1.7;font-size:14px;}.footer-contact a{color:var(--khaki2);text-decoration:none;}.footer-contact a:hover{color:var(--orange2);}.footer-legal{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;gap:0;}.legal-toggle-wrap{border-top:1px solid rgba(255,255,255,0.05);}.legal-toggle-wrap:first-child{border-top:none;}.legal-toggle{width:100%;background:none;border:none;color:rgba(255,255,255,0.4);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;padding:12px 0;display:flex;align-items:center;justify-content:space-between;gap:8px;transition:color 0.2s;font-family:inherit;}.legal-toggle:hover{color:rgba(255,255,255,0.65);}.ds-arrow{font-size:13px;transition:transform 0.25s;display:inline-block;flex-shrink:0;}.legal-toggle[aria-expanded="true"]{color:rgba(255,255,255,0.65);}.legal-toggle[aria-expanded="true"] .ds-arrow{transform:rotate(180deg);}.legal-body{padding:0 0 20px;}.legal-body[hidden]{display:none;}/* Impressum grid inside legal-body */.legal-body .impressum-grid{margin-top:4px;}/* Datenschutz content */.legal-body h4{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:20px;color:var(--orange);letter-spacing:1px;margin-bottom:12px;}.legal-body h5{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:14px 0 4px;}.legal-body p{font-size:12px;color:rgba(255,255,255,0.35);line-height:1.65;}.legal-body a{color:var(--khaki2);}.legal-body a:hover{color:var(--orange);}/* ─── RESPONSIVE ─── */@media (max-width:1024px){nav{padding:0 20px;}.nav-links{display:none;}.burger{display:flex;}}@media (max-width:768px){#hero{padding:80px 20px 56px;}.hero-stats{gap:24px;}#about{padding:64px 20px;}.about-grid{grid-template-columns:1fr;gap:36px;}.location-details{grid-template-columns:1fr 1fr;}#location{padding:64px 20px;}#problems,#price,#how,#materials,#reviews{padding:64px 20px;}#cta{padding:64px 20px;text-align:left;}#cta p{font-size:16px;margin-left:0;}#cta h2{text-align:left;}.problems-grid,.materials-grid,.reviews-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr;}.price-table{width:100%;}.price-row{flex-direction:column;align-items:flex-start;gap:4px;}.price-val{font-size:24px;}.reviews-header{flex-direction:column;align-items:flex-start;}.footer-inner{text-align:left;}.footer-top{flex-direction:column;gap:20px;}.footer-bottom{flex-direction:column;align-items:flex-start;gap:4px;}.impressum-grid{grid-template-columns:1fr 1fr;}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;}.gallery-item--wide{grid-column:1 / -1;}}@media (max-width:480px){h1{font-size:52px;}.hero-stats{flex-direction:column;gap:16px;}.location-details{grid-template-columns:1fr;}.impressum-grid{grid-template-columns:1fr;}.gallery{grid-template-columns:1fr;grid-template-rows:auto;}.gallery-item{height:220px;}.gallery-item--wide{grid-column:1;}.datenschutz-body{grid-template-columns:1fr;}}</style>
+<script>
+// Определяем поддержку avif, ставим класс на <html>
+var i=new Image();
+i.onload=function(){if(i.width>0)document.documentElement.classList.add('avif');};
+i.src='data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAABcAAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQAMAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB9tZGF0EgAKBzgADlAgIGkyCR/xgAABAABSKmA=';
+</script>
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "LocalBusiness",
+"@id": "https://fahrradtechnik-neugebauer.at",
+"name": "FahrradTechnik Johannes Neugebauer",
+"description": "Fahrradwerkstatt in Wien Landstraße – Reparatur, Tuning und Rahmenbau für alle Fahrradtypen.",
+"url": "https://fahrradtechnik-neugebauer.at",
+"telephone": "+436645336008",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "Neulinggasse 24/1",
+"addressLocality": "Wien",
+"postalCode": "1030",
+"addressCountry": "AT"
+},
+"geo": {
+"@type": "GeoCoordinates",
+"latitude": 48.1992093,
+"longitude": 16.3883625
+},
+"openingHoursSpecification": [
+{
+"@type": "OpeningHoursSpecification",
+"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+"opens": "10:00",
+"closes": "19:00"
+}
+],
+"priceRange": "€–€€",
+"currenciesAccepted": "EUR",
+"paymentAccepted": "Cash, Card",
+"hasMap": "https://maps.app.goo.gl/i43mn3rCZgSWAm2K8",
+"sameAs": ["https://maps.app.goo.gl/i43mn3rCZgSWAm2K8"],
+"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": "4.9",
+"reviewCount": "47",
+"bestRating": "5"
+},
+"serviceType": ["Fahrradreparatur","Fahrrad-Tuning","Rahmenbau","E-Bike Service"]
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link" data-i18n="skip">Zum Inhalt springen</a>
+<nav aria-label="Hauptnavigation">
+<div class="nav-inner">
+<a class="nav-logo" href="#hero">FahrradTechnik</a>
+<ul class="nav-links">
+<li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+<li><a href="#location" data-i18n="nav_location">Standort</a></li>
+<li><a href="#problems" data-i18n="nav_problems">Leistungen</a></li>
+<li><a href="#price" data-i18n="nav_price">Preise</a></li>
+<li><a href="#how" data-i18n="nav_how">Ablauf</a></li>
+<li><a href="#materials" data-i18n="nav_materials">Material</a></li>
+<li><a href="#reviews" data-i18n="nav_reviews">Bewertungen</a></li>
+<li><a href="#cta" data-i18n="nav_cta">Kontakt</a></li>
+</ul>
+<div class="nav-right"><div class="lang-switcher"><button class="lang-btn active" onclick="setLang('de')" id="btn-de">DE</button><button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button></div><button class="burger" id="burger" aria-label="Menü öffnen" data-i18n-aria="burger" aria-expanded="false" aria-controls="mobileMenu">
+<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+</button>
+</div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="navigation" aria-label="Mobiles Menü">
+<a href="#about" onclick="closeMenu()" data-i18n="nav_about">Über uns</a>
+<a href="#location" onclick="closeMenu()" data-i18n="nav_location">Standort</a>
+<a href="#problems" onclick="closeMenu()" data-i18n="nav_problems">Leistungen</a>
+<a href="#price" onclick="closeMenu()" data-i18n="nav_price">Preise</a>
+<a href="#how" onclick="closeMenu()" data-i18n="nav_how">Ablauf</a>
+<a href="#materials" onclick="closeMenu()" data-i18n="nav_materials">Material</a>
+<a href="#reviews" onclick="closeMenu()" data-i18n="nav_reviews">Bewertungen</a>
+<a href="#cta" onclick="closeMenu()" data-i18n="nav_cta">Kontakt</a>
+</div>
+<main id="main-content">
+<section id="hero">
+<div class="hero-content">
+<div class="hero-text">
+<div class="hero-badge" data-i18n="hero_badge">Fahrradreparatur Wien – Neulinggasse 24, 1030</div>
+<h1 data-i18n-html="hero_h1">Dein Rad.<br><span>Repariert.</span><br>Fertig.</h1>
+<p class="hero-sub" data-i18n="hero_sub">Professionelle Fahrrad-Reparatur und Fahrrad-Service in Wien Landstraße. Werkstatt · Tuningsalon · Rahmenbau – alle Marken und Typen, Mo–Sa 10–19 Uhr.</p>
+<div class="hero-ctas">
+<a class="btn-primary" href="tel:+436645336008">📞 0664 / 533 60 08</a>
+<a class="btn-secondary" href="#price" data-i18n="hero_btn_price">Preisliste ansehen →</a>
+</div>
+<div class="hero-stats">
+<div class="stat">
+<div class="stat-num">1400+</div>
+<div class="stat-label" data-i18n="stat_repairs">Reparaturen / Jahr</div>
+</div>
+<div class="stat">
+<div class="stat-num">28</div>
+<div class="stat-label" data-i18n="stat_years">Jahre Erfahrung</div>
+</div>
+<div class="stat">
+<div class="stat-num">1–3</div>
+<div class="stat-label" data-i18n="stat_wait">Tage Wartezeit</div>
+</div>
+<div class="stat">
+<div class="stat-num">4.9★</div>
+<div class="stat-label" data-i18n="stat_rating">Google-Bewertung</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="section-inner">
+<div class="section-label" data-i18n="about_label">Wer wir sind</div>
+<h2 data-i18n-html="about_h2">Echter Profi.<br><span>Keine Tricks.</span></h2>
+<div class="about-grid">
+<div class="about-text">
+<p data-i18n="about_p1">FahrradTechnik Wien ist eine unabhängige Fahrradwerkstatt in Wien Landstraße – kein Franchise, keine Kette. Hier arbeitet Johannes Neugebauer, ein echter Mechaniker mit langjähriger Erfahrung, dem es wichtig ist, dass dein Rad danach wirklich funktioniert.</p>
+<p data-i18n="about_p2">Fahrräder reparieren in Wien – Werkstatt, Tuningsalon und Rahmenbau unter einem Dach. Wir reparieren alles: Citybikes, Rennräder, Mountainbikes und Vintage-Räder. Kleinere Reparaturen oft direkt am selben Tag – ohne Terminvormerkung.</p>
+<p data-i18n="about_p3">Fahrrad-Check in Wien – keine versteckten Kosten. Vor jeder Reparatur gibt es eine klare Kosteneinschätzung. Du entscheidest, was gemacht wird.</p>
+<div class="tags">
+<span class="tag">Citybike</span>
+<span class="tag">Rennrad</span>
+<span class="tag">MTB</span>
+<span class="tag">Vintage</span>
+<span class="tag">Trekkingrad</span>
+<span class="tag">Fixie</span>
+<span class="tag">Rahmenbau</span>
+<span class="tag">Tuning</span>
+</div>
+</div>
+<div class="about-card">
+<div class="master-photo-wrap">
+<picture>
+<source srcset="FOTO_JOHANNES.avif" type="image/avif">
+<source srcset="FOTO_JOHANNES.webp" type="image/webp">
+<img src="FOTO_JOHANNES.jpg" alt="Johannes Neugebauer – Fahrradmechaniker"
+class="master-photo"
+onerror="this.closest('.master-photo-wrap').querySelector('.master-photo-fallback').style.display='flex';this.style.display='none'">
+</picture>
+<div class="master-photo-fallback">
+<span>📷</span>
+<span>Foto des Meisters</span>
+<span style="font-size:11px;opacity:0.5">src="FOTO_JOHANNES.jpg" ersetzen</span>
+</div>
+</div>
+<h3>Johannes Neugebauer</h3>
+<div class="name-sub" data-i18n="about_role">Fahrradmechaniker · Inhaber</div>
+<p data-i18n-html="about_card_p1">Werkstatt · Tuningsalon · Rahmenbau.<br>Neulinggasse 24, 1030 Wien</p>
+<p data-i18n="about_quote">„Ich repariere kein Fahrrad, das ich danach nicht selbst fahren würde."</p>
+<div class="tags">
+<span class="tag">Rahmenbau</span>
+<span class="tag">Tuningsalon</span>
+<span class="tag" data-i18n="tag_allbrands">Alle Marken</span>
+</div>
+</div>
+</div>
+<div class="gallery">
+<div class="gallery-item gallery-item--wide">
+<picture>
+<source srcset="photo_werkstatt.avif" type="image/avif">
+<source srcset="photo_werkstatt.webp" type="image/webp">
+<img src="photo_werkstatt.jpeg" alt="Werkstatt FahrradTechnik Wien – Innenansicht" loading="lazy">
+</picture>
+<div class="gallery-caption" data-i18n="gallery_1">Die Werkstatt</div>
+</div>
+<div class="gallery-item">
+<picture>
+<source srcset="photo_rennrad.avif" type="image/avif">
+<source srcset="photo_rennrad.webp" type="image/webp">
+<img src="photo_rennrad.jpeg" alt="Rennrad hängt an der Wand – FahrradTechnik Wien" loading="lazy">
+</picture>
+<div class="gallery-caption" data-i18n="gallery_2">Rennrad-Service</div>
+</div>
+<div class="gallery-item">
+<picture>
+<source srcset="photo_bikes.avif" type="image/avif">
+<source srcset="photo_bikes.webp" type="image/webp">
+<img src="photo_bikes.jpeg" alt="Verschiedene Fahrräder in der Werkstatt" loading="lazy">
+</picture>
+<div class="gallery-caption" data-i18n="gallery_3">Alle Typen willkommen</div>
+</div>
+</div>
+</div>
+</section>
+<section id="location">
+<div class="location-inner">
+<div class="section-label" data-i18n="loc_label">Wo wir sind</div>
+<h2 data-i18n-html="loc_h2">Mitten in <span>Wien.</span></h2>
+<div class="location-details">
+<div class="loc-row">
+<div class="loc-icon">📍</div>
+<div>
+<strong data-i18n="loc_addr">Adresse</strong>
+<p>Neulinggasse 24/1<br>1030 Wien, Landstraße</p>
+</div>
+</div>
+<div class="loc-row">
+<div class="loc-icon">🕐</div>
+<div>
+<strong data-i18n="loc_hours">Öffnungszeiten</strong>
+<p data-i18n-html="loc_hours_val">Mo–Sa: 10:00–19:00 Uhr<br>So: geschlossen</p>
+</div>
+</div>
+<div class="loc-row">
+<div class="loc-icon">📞</div>
+<div>
+<strong data-i18n="loc_phone">Telefon</strong>
+<p><a href="tel:+436645336008" style="color:var(--orange2);font-weight:800;">0664 / 533 60 08</a></p>
+</div>
+</div>
+<div class="loc-row">
+<div class="loc-icon">🚲</div>
+<div>
+<strong data-i18n="loc_transit">Anreise</strong>
+<p data-i18n-html="loc_transit_val">Tram Ungargasse/<br>Neulinggasse – 1 Min.<br><small>Fahrradwerkstatt in der Nähe – Wien 3</small></p>
+</div>
+</div>
+</div>
+<a class="loc-maps-btn"
+href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8"
+target="_blank" rel="noopener noreferrer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+<span data-i18n="loc_maps_btn">In Google Maps öffnen ↗</span>
+</a>
+</div>
+</section>
+<section id="problems">
+<div class="section-inner">
+<div class="problems-intro">
+<div class="section-label" data-i18n="prob_label">Was wir reparieren</div>
+<h2 data-i18n-html="prob_h2">Welches <span>Problem</span><br>hast du?</h2>
+</div>
+<div class="problems-grid">
+<div class="problem-card">
+<span class="problem-icon">🔴</span>
+<h3 data-i18n="prob1_h">Platten Reifen</h3>
+<p data-i18n="prob1_p">Schlauch gewechselt, Ventil geprüft, Reifensitz kontrolliert. Oft innerhalb einer Stunde erledigt.</p>
+<span class="fix-label" data-i18n="prob1_lbl">Schnellreparatur möglich</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">⛓️</span>
+<h3 data-i18n="prob2_h">Kette springt / reißt</h3>
+<p data-i18n="prob2_p">Kettenverschleiß prüfen, Kette ersetzen oder reparieren, Schaltwerk einstellen.</p>
+<span class="fix-label" data-i18n="prob2_lbl">Am selben Tag</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🛑</span>
+<h3 data-i18n="prob3_h">Bremsen greifen nicht</h3>
+<p data-i18n="prob3_p">Bremsbeläge, Bremszüge, Hydraulik – wir überprüfen alles und stellen sicher ein.</p>
+<span class="fix-label" data-i18n="prob3_lbl">Sicherheitscheck inklusive</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🔧</span>
+<h3 data-i18n="prob4_h">Schaltung hakt</h3>
+<p data-i18n="prob4_p">Schaltwerk / Umwerfer einstellen, Züge prüfen, Kassettenreinigung falls nötig.</p>
+<span class="fix-label" data-i18n="prob4_lbl">Feineinstellung gratis</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🎯</span>
+<h3 data-i18n="prob5_h">Lenker / Sattel wackelt</h3>
+<p data-i18n="prob5_p">Anzugsmomente prüfen, Vorbauten und Sattelstützen korrekt montieren.</p>
+<span class="fix-label" data-i18n="prob5_lbl">Schnell und günstig</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">⚡</span>
+<h3 data-i18n="prob6_h">E-Bike Probleme</h3>
+<p data-i18n="prob6_p">Motor, Akku, Display – wir arbeiten mit Bosch, Shimano Steps und Bafang Systemen.</p>
+<span class="fix-label" data-i18n="prob6_lbl">Zertifizierter Service</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🔩</span>
+<h3 data-i18n="prob7_h">Rad knirscht / quietscht</h3>
+<p data-i18n="prob7_p">Euer Fahrradmechaniker in Wien: Geräuschdiagnose, Lager prüfen, Tretlager und Pedalachsen schmieren oder tauschen.</p>
+<span class="fix-label" data-i18n="prob7_lbl">Diagnose kostenlos</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🔄</span>
+<h3 data-i18n="prob8_h">Jahresinspektion</h3>
+<p data-i18n="prob8_p">Komplettcheck aller Komponenten – ideal vor dem Frühling oder nach dem Winter.</p>
+<span class="fix-label" data-i18n="prob8_lbl">Wartungspaket ab 49 €</span>
+</div>
+<div class="problem-card">
+<span class="problem-icon">🏔️</span>
+<h3 data-i18n="prob9_h">Stoßdämpfer / Federung</h3>
+<p data-i18n="prob9_p">Luftdruck einstellen, Wartungsintervalle, Leckagen reparieren, Service Kits einbauen.</p>
+<span class="fix-label" data-i18n="prob9_lbl">MTB-Spezialist</span>
+</div>
+</div>
+</div>
+</section>
+<section id="price">
+<div class="section-inner">
+<div class="section-label" data-i18n="price_label">Preisliste</div>
+<h2 data-i18n-html="price_h2">Faire <span>Preise.</span></h2>
+<p class="price-intro" data-i18n="price_intro">Alle Preise inkl. MwSt. Materialkosten werden separat ausgewiesen. Vor jeder Reparatur gibt es eine kostenlose Einschätzung.</p>
+<div class="price-table">
+<div class="price-category" data-i18n="pcat1">⚡ Schnellreparaturen</div>
+<div class="price-row">
+<div class="price-name">Schlauch wechseln<small>inkl. Reifen abnehmen und montieren</small></div>
+<div class="price-val">ab 12 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Flicken (Schlauch reparieren)<small>Standardschlauch</small></div>
+<div class="price-val">8 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Kette reparieren / verbinden<small>Kettenniete oder Kettenschloss</small></div>
+<div class="price-val">10 €</div>
+</div>
+<div class="price-category" data-i18n="pcat2">🔧 Bremsen & Schaltung</div>
+<div class="price-row">
+<div class="price-name">Bremsen einstellen<small>Felgenbremse oder Scheibenbremse</small></div>
+<div class="price-val">15–25 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Bremsbeläge tauschen<small>pro Achse, ohne Material</small></div>
+<div class="price-val">12 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Hydraulikbremse entlüften<small>inkl. Bremsflüssigkeit</small></div>
+<div class="price-val">35 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Schaltung einstellen<small>Front + Rear Derailleur</small></div>
+<div class="price-val">20–35 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Kette + Kassette tauschen<small>ohne Material</small></div>
+<div class="price-val">25 €</div>
+</div>
+<div class="price-category" data-i18n="pcat3">⚙️ Lager & Tretlager</div>
+<div class="price-row">
+<div class="price-name">Tretlager tauschen<small>BSA/Press-fit, ohne Material</small></div>
+<div class="price-val">25–40 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Nabenlager reparieren / tauschen<small>pro Nabe</small></div>
+<div class="price-val">20–35 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Steuersatz tauschen<small>inkl. Einpressen</small></div>
+<div class="price-val">35 €</div>
+</div>
+<div class="price-category" data-i18n="pcat4">🔄 Wartungspakete</div>
+<div class="price-row">
+<div class="price-name">Basis-Inspektion<small>Bremsen, Schaltung, Reifendruck, Beleuchtung</small></div>
+<div class="price-val">49 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Komplett-Service<small>Alles oben + Lager, Reinigung, Schmierung</small></div>
+<div class="price-val">89 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">Generalüberholung<small>Komplette Demontage, Reinigung, Aufbau</small></div>
+<div class="price-val">ab 150 €</div>
+</div>
+<div class="price-category" data-i18n="pcat5">⚡ E-Bike Service</div>
+<div class="price-row">
+<div class="price-name">E-Bike Diagnose<small>Fehlerauslesen, Systemcheck</small></div>
+<div class="price-val">25 €</div>
+</div>
+<div class="price-row">
+<div class="price-name">E-Bike Basis-Inspektion<small>Antrieb + Mechanik</small></div>
+<div class="price-val">69 €</div>
+</div>
+</div>
+<p class="price-note"><span data-i18n="price_note_text">* Arbeitszeit: 65 €/Stunde. Materialkosten werden zusätzlich berechnet und vorher besprochen. Preise können je nach Fahrradtyp variieren.</span></p>
+</div>
+</section>
+<section id="how">
+<div class="section-inner">
+<div class="section-label" data-i18n="how_label">So läuft's ab</div>
+<h2 data-i18n-html="how_h2">Einfach & <span>transparent.</span></h2>
+<div class="steps">
+<div class="step">
+<span class="step-num">01</span>
+<h3 data-i18n="step1_h">Anrufen oder vorbeikommen</h3>
+<p data-i18n="step1_p">Fahrrad-Reparatur in der Nähe? Ruf kurz an oder komm einfach vorbei. Für größere Reparaturen empfehlen wir einen kurzen Anruf vorab, damit wir Zeit für dich einplanen können.</p>
+</div>
+<div class="step">
+<span class="step-num">02</span>
+<h3 data-i18n="step2_h">Kostenlose Diagnose</h3>
+<p data-i18n="step2_p">Wir schauen uns dein Rad an und erklären dir, was kaputt ist – auf Deutsch und verständlich. Keine Überraschungen, keine Fachbegriff-Verwirrung.</p>
+</div>
+<div class="step">
+<span class="step-num">03</span>
+<h3 data-i18n="step3_h">Klare Kosteneinschätzung</h3>
+<p data-i18n="step3_p">Du bekommst einen ehrlichen Preis, bevor wir anfangen. Du entscheidest, was gemacht wird. Kein Druck, kein Upselling.</p>
+</div>
+<div class="step">
+<span class="step-num">04</span>
+<h3 data-i18n="step4_h">Reparatur</h3>
+<p data-i18n="step4_p">Wir reparieren dein Rad – sorgfältig und mit hochwertigen Teilen. Kleine Jobs oft noch am selben Tag, größere innerhalb von 1–3 Werktagen.</p>
+</div>
+<div class="step">
+<span class="step-num">05</span>
+<h3 data-i18n="step5_h">Abholung & Check</h3>
+<p data-i18n="step5_p">Wir erklären dir kurz, was gemacht wurde und geben Tipps für die Pflege. Du fährst mit einem Rad weg, auf das du dich verlassen kannst.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="materials">
+<div class="section-inner">
+<div class="section-label" data-i18n="mat_label">Materialien & Teile</div>
+<h2 data-i18n-html="mat_h2">Nur <span>echte Qualität.</span></h2>
+<div class="materials-grid">
+<div class="mat-card">
+<span class="mat-icon">⛓️</span>
+<h3 data-i18n="mat1_h">Shimano & SRAM Antriebe</h3>
+<p data-i18n="mat1_p">Ketten, Kassetten, Schaltwerke und Kurbelarme ausschließlich von führenden Marken. Langlebig und weltweit kompatibel.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🏎️</span>
+<h3 data-i18n="mat2_h">Continental & Schwalbe Reifen</h3>
+<p data-i18n="mat2_p">Reifen und Schläuche von den besten deutschen Herstellern. Für Straße, Schotter und Gelände.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🛑</span>
+<h3 data-i18n="mat3_h">Magura & Shimano Hydraulik</h3>
+<p data-i18n="mat3_p">Original-Bremsflüssigkeit und zertifizierte Bremsbeläge. Kein Billigersatz – nur was auch hält.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🔩</span>
+<h3 data-i18n="mat4_h">Edelstahl-Schrauben & Befestigungen</h3>
+<p data-i18n="mat4_p">Keine Zinkschrauben, die nach einem Winter verrosten. Wir verwenden Edelstahl und TI-Schrauben, wo sinnvoll.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">🧴</span>
+<h3 data-i18n="mat5_h">Professionelle Schmierstoffe</h3>
+<p data-i18n="mat5_p">Finish Line, Motorex und Weldtite – die richtigen Öle und Fette für jede Anwendung. Kein WD-40 auf Lagern.</p>
+</div>
+<div class="mat-card">
+<span class="mat-icon">⚡</span>
+<h3 data-i18n="mat6_h">Original E-Bike Komponenten</h3>
+<p data-i18n="mat6_p">Für Bosch, Shimano Steps und Bafang verwenden wir ausschließlich Original-Ersatzteile und Service-Kits.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reviews">
+<div class="section-inner">
+<div class="reviews-header">
+<div>
+<div class="section-label" data-i18n="rev_label">Kundenstimmen</div>
+<h2 data-i18n-html="rev_h2">Was andere <span>sagen.</span></h2>
+</div>
+<a class="btn-google-reviews"
+href="https://www.google.com/maps/place/Fahrradtechnik+Johannes+Neugebauer/@48.1992093,16.3883625,17z/data=!4m7!3m6!1s0x476d0790e1f8cdeb:0x800b395eb1931adc!8m2!3d48.1992093!4d16.3883625!9m1!1b1"
+target="_blank" rel="noopener noreferrer">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+<span data-i18n="rev_btn">Alle Bewertungen auf Google</span>
+</a>
+</div>
+<div class="reviews-grid">
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer" data-i18n-aria="rev_card_aria">
+<p data-i18n="rev1_text">Johannes hat mein schon sehr mitgenommenes Rennrad so hergerichtet, dass es sich besser fährt als am ersten Tag! Er arbeitet mit so einer Leidenschaft wie ich es noch nie erlebt habe. Man merkt, er ist ein absoluter Profi. Ich kann ihn nur wärmstens weiterempfehlen.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="reviewer">
+<div class="avatar">A</div>
+<div>
+<div class="reviewer-name">Anja</div>
+<div class="reviewer-sub" data-i18n="rev_source">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer" data-i18n-aria="rev_card_aria">
+<p data-i18n="rev2_text">Absolute Empfehlung! Johannes hat mir sehr schnell geholfen, er arbeitet super transparent und ist sehr sympathisch.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="reviewer">
+<div class="avatar">K</div>
+<div>
+<div class="reviewer-name">Katharina</div>
+<div class="reviewer-sub" data-i18n="rev_source">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer" data-i18n-aria="rev_card_aria">
+<p data-i18n="rev3_text">Johannes ist ein wirklich kompetenter und erfahrener Fahrradmechaniker. Er hat mein Trek-Mountainbike aus den 90ern sanft renoviert und wieder in einen coolen Renner verwandelt. Ein Profi für alle Probleme rund ums Fahrrad!</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="reviewer">
+<div class="avatar">M</div>
+<div>
+<div class="reviewer-name">Michael</div>
+<div class="reviewer-sub" data-i18n="rev_source">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer" data-i18n-aria="rev_card_aria">
+<p data-i18n="rev4_text">Johannes arbeitet mit einer Liebe zum Detail, die ich unfassbar bewundere. Er nimmt sich Zeit für jeden seiner Kund:innen. In dieser Werkstatt wird jedes Fahrrad mit Liebe repariert, getunt und verbessert. Beim nächsten Problem komme ich nur hier her!</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="reviewer">
+<div class="avatar">S</div>
+<div>
+<div class="reviewer-name">Sandra</div>
+<div class="reviewer-sub" data-i18n="rev_source">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer" data-i18n-aria="rev_card_aria">
+<p data-i18n="rev5_text">Der Fahrrad-Formel-1-Mechaniker Wiens! Johannes werde ich ab jetzt alles in Sachen Bike anvertrauen. Altes verrostetes Stadtrad von 1980? Sofort zu ihm. Neues 3000 €-Mountainbike? Er optimiert alles. Bin von dieser Werkstatt absolut überzeugt.</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="reviewer">
+<div class="avatar">T</div>
+<div>
+<div class="reviewer-name">Thomas</div>
+<div class="reviewer-sub" data-i18n="rev_source">Google-Bewertung</div>
+</div>
+</div>
+</a>
+<a class="review-card review-card--link" href="https://maps.app.goo.gl/i43mn3rCZgSWAm2K8" target="_blank" rel="noopener noreferrer" data-i18n-aria="rev_card_aria">
+<p data-i18n="rev6_text">Super persönliche Werkstatt! Alles sehr unkompliziert und professionell. Hoher Qualitätsanspruch aber günstig – hier werden keine billigen Teile verbaut!</p>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+<div class="reviewer">
+<div class="avatar">L</div>
+<div>
+<div class="reviewer-name">Lukas</div>
+<div class="reviewer-sub" data-i18n="rev_source">Google-Bewertung</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section id="cta">
+<h2 data-i18n="cta_h2">Dein Rad wartet.</h2>
+<p data-i18n="cta_sub">Ruf einfach an oder komm vorbei. Kostenlose Einschätzung vor jeder Reparatur – kein Druck, kein Upselling.</p>
+<a class="btn-white" href="tel:+436645336008">📞 0664 / 533 60 08</a>
+<br><br>
+<span style="color:rgba(255,255,255,0.9); font-size:14px; position:relative;" data-i18n="cta_addr">Neulinggasse 24, 1030 Wien · Mo–Sa 10–19 Uhr</span>
+</section>
+</main>
+<footer role="contentinfo">
+<div class="footer-inner">
+<div class="footer-top">
+<div>
+<span class="footer-logo">FahrradTechnik</span>
+<span class="footer-tagline" data-i18n="footer_tagline">Werkstatt · Tuningsalon · Rahmenbau</span>
+</div>
+<div class="footer-contact">
+<strong>Johannes Maximilian Neugebauer</strong><br>
+<span data-i18n="footer_addr_city">Neulinggasse 24/1, 1030 Wien</span><br>
+<a href="tel:+436645336008">0664 / 533 60 08</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span data-i18n="footer_copy">© 2026 Johannes Maximilian Neugebauer</span>
+<span data-i18n="footer_vat">Alle Preise inkl. MwSt. · Irrtümer vorbehalten</span>
+</div>
+<div class="footer-legal">
+<div class="legal-toggle-wrap">
+<button class="legal-toggle" onclick="toggleImpressum()" aria-expanded="false" aria-controls="impressum-body" type="button">
+<span data-i18n="imp_btn">Impressum</span>
+<span class="ds-arrow">▾</span>
+</button>
+</div>
+<div id="impressum-body" class="legal-body" hidden>
+<dl class="impressum-grid">
+<div class="impressum-block">
+<dt data-i18n="imp_name_lbl">Firmenname</dt>
+<dd>Johannes Maximilian Neugebauer</dd>
+</div>
+<div class="impressum-block">
+<dt data-i18n="imp_trade_lbl">Gewerbewortlaut</dt>
+<dd data-i18n="imp_trade_val">Fahrradtechnik</dd>
+</div>
+<div class="impressum-block">
+<dt data-i18n="imp_prof_lbl">Berufszweig</dt>
+<dd data-i18n="imp_prof_val">Zweiradmechaniker, Fahrradtechniker</dd>
+</div>
+<div class="impressum-block">
+<dt data-i18n="imp_addr_lbl">Adresse</dt>
+<dd>1030 Wien, Neulinggasse 24/1</dd>
+</div>
+<div class="impressum-block">
+<dt>GISA-Zahl</dt>
+<dd>32548273</dd>
+</div>
+<div class="impressum-block">
+<dt>GLN</dt>
+<dd>9110028664960</dd>
+</div>
+<div class="impressum-block">
+<dt data-i18n="imp_auth_lbl">Behörde gem. ECG</dt>
+<dd data-i18n="imp_auth_val">Magistratisches Bezirksamt des III. Bezirkes</dd>
+</div>
+<div class="impressum-block">
+<dt data-i18n="imp_lic_lbl">Gewerbeberechtigung</dt>
+<dd data-i18n="imp_lic_val">Seit 01.04.2020</dd>
+</div>
+</dl>
+</div>
+<div class="legal-toggle-wrap">
+<button class="legal-toggle" onclick="toggleDatenschutz()" aria-expanded="false" aria-controls="datenschutz-body" type="button">
+<span data-i18n="dsgvo_btn">Datenschutzerklärung</span>
+<span class="ds-arrow">▾</span>
+</button>
+</div>
+<div id="datenschutz-body" class="legal-body" hidden>
+<h4 data-i18n="dsgvo_title">Datenschutzerklärung</h4>
+<h5 data-i18n="dsgvo_h1">1. Verantwortlicher</h5>
+<p>Johannes Maximilian Neugebauer<br>Neulinggasse 24/1, 1030 Wien<br>Tel.: 0664 / 533 60 08</p>
+<h5 data-i18n="dsgvo_h2">2. Erhebung und Verarbeitung personenbezogener Daten</h5>
+<p data-i18n="dsgvo_p1">Diese Website erhebt keine personenbezogenen Daten über Tracking, Cookies oder Analysetools. Beim Aufruf der Website werden vom Hosting-Anbieter technisch notwendige Zugriffsdaten protokolliert. Diese Daten werden nicht weitergegeben.</p>
+<h5 data-i18n="dsgvo_h3">3. Kontaktaufnahme</h5>
+<p data-i18n="dsgvo_p2">Wenn Sie uns per Telefon kontaktieren, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und danach nicht gespeichert.</p>
+<h5 data-i18n="dsgvo_h4">4. Ihre Rechte</h5>
+<p data-i18n-html="dsgvo_p3">Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung. Beschwerden können an die Datenschutzbehörde gerichtet werden: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+<h5 data-i18n="dsgvo_h5">5. Externe Links</h5>
+<p data-i18n="dsgvo_p4">Diese Website enthält keine eingebetteten Social-Media-Plugins oder Tracking-Pixel. Für externe verlinkte Seiten übernehmen wir keine Haftung.</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+// ── Legal toggles ──────────────────────────────────────
+function toggleLegal(id) {
+const body = document.getElementById(id);
+const btn = body.previousElementSibling.querySelector('.legal-toggle');
+const open = body.hidden;
+body.hidden = !open;
+btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function toggleImpressum() { toggleLegal('impressum-body'); }
+function toggleDatenschutz() { toggleLegal('datenschutz-body'); }
+// ── Init on DOM ready ──────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+const navEl = document.querySelector('nav');
+let navH = navEl.offsetHeight;
+// Burger
+burger.addEventListener('click', () => {
+const isOpen = burger.classList.toggle('open');
+mobileMenu.classList.toggle('open');
+burger.setAttribute('aria-expanded', String(isOpen));
+mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+burger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+});
+// Close mobile menu on link click
+window.closeMenu = function() {
+burger.classList.remove('open');
+mobileMenu.classList.remove('open');
+burger.setAttribute('aria-expanded', 'false');
+mobileMenu.setAttribute('aria-hidden', 'true');
+};
+// Resize debounce
+let resizeTimer;
+window.addEventListener('resize', () => {
+clearTimeout(resizeTimer);
+resizeTimer = setTimeout(() => { navH = navEl.offsetHeight; cacheSectionTops(); }, 150);
+}, { passive: true });
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+link.addEventListener('click', function(e) {
+const id = this.getAttribute('href').slice(1);
+if (!id) return;
+const target = document.getElementById(id);
+if (!target) return;
+e.preventDefault();
+closeMenu();
+window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH, behavior: 'smooth' });
+});
+});
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+let sectionTops = [];
+function cacheSectionTops() {
+sectionTops = Array.from(sections).map(s => ({ id: s.id, top: s.offsetTop }));
+}
+window.addEventListener('load', cacheSectionTops);
+cacheSectionTops();
+let ticking = false;
+window.addEventListener('scroll', () => {
+if (!ticking) {
+requestAnimationFrame(() => {
+const scrollY = window.scrollY;
+let current = '';
+sectionTops.forEach(s => { if (scrollY >= s.top - navH - 10) current = s.id; });
+allNavLinks.forEach(a => {
+a.style.color = a.getAttribute('href') === '#' + current ? 'var(--orange2)' : '';
+});
+ticking = false;
+});
+ticking = true;
+}
+}, { passive: true });
+});
+</script>
+<script>
+// ── i18n ──────────────────────────────────────────────────────────────
+const T = {
+de: {
+page_title:'FahrradTechnik Wien \u2013 Fahrrad Reparatur & Service | Johannes Neugebauer',
+page_desc:'Fahrradwerkstatt Wien \u2013 professionelle Fahrrad-Reparatur, Service und Rahmenbau. Alle Marken. Mo\u2013Sa 10\u201319. Neulinggasse 24, 1030 Wien.',
+skip:'Zum Inhalt springen',
+nav_about:'Über uns', nav_location:'Standort', nav_problems:'Leistungen',
+nav_price:'Preise', nav_how:'Ablauf', nav_materials:'Material',
+nav_reviews:'Bewertungen', nav_cta:'Kontakt',
+burger_open:'Menü öffnen', burger_close:'Menü schließen',
+hero_badge:'Fahrradreparatur Wien \u2013 Neulinggasse 24, 1030',
+hero_h1:'Dein Rad.<br><span>Repariert.</span><br>Fertig.',
+hero_sub:'Professionelle Fahrrad Reparatur Wien und Fahrrad Service Wien \u2013 Werkstatt, Tuningsalon, Rahmenbau, alle Marken. Mo\u2013Sa 10\u201319 Uhr.',
+hero_btn_price:'Preisliste ansehen \u2192',
+stat_repairs:'Reparaturen / Jahr', stat_years:'Jahre Erfahrung',
+stat_wait:'Tage Wartezeit', stat_rating:'Google-Bewertung',
+about_label:'Wer wir sind',
+about_h2:'Echter Profi.<br><span>Keine Tricks.</span>',
+about_role:'Fahrradmechaniker · Inhaber',
+about_p1:'FahrradTechnik Wien ist eine unabhängige Fahrradwerkstatt in Wien Landstraße \u2013 kein Franchise, keine Kette. Hier arbeitet Johannes Neugebauer, ein echter Mechaniker mit langjähriger Erfahrung, dem es wichtig ist, dass dein Rad danach wirklich funktioniert.',
+about_p2:'Fahrräder reparieren in Wien \u2013 Werkstatt, Fahrradservice Wien, Tuningsalon und Rahmenbau unter einem Dach. Wir reparieren alles: Citybikes, Rennräder, Mountainbikes und Vintage-Räder. Kleinere Reparaturen oft direkt am selben Tag \u2013 ohne Terminvormerkung.',
+about_p3:'Fahrrad-Check in Wien \u2013 keine versteckten Kosten. Vor jeder Reparatur gibt es eine klare Kosteneinschätzung. Du entscheidest, was gemacht wird.',
+about_card_p1:'Werkstatt · Tuningsalon · Rahmenbau.<br>Neulinggasse 24, 1030 Wien',
+about_quote:'\u201eIch repariere kein Fahrrad, das ich danach nicht selbst fahren würde.\u201c',
+tag_allbrands:'Alle Marken',
+gallery_1:'Die Werkstatt', gallery_2:'Rennrad-Service', gallery_3:'Alle Typen willkommen',
+loc_label:'Wo wir sind',
+loc_h2:'Mitten in <span>Wien.</span>',
+loc_addr:'Adresse', loc_hours:'Öffnungszeiten',
+loc_hours_val:'Mo\u2013Sa: 10:00\u201319:00 Uhr<br>So: geschlossen',
+loc_phone:'Telefon', loc_transit:'Anreise',
+loc_transit_val:'Tram Ungargasse/<br>Neulinggasse \u2013 1 Min.<br><small>Fahrradwerkstatt in der Nähe \u2013 Wien 3</small>',
+loc_maps_btn:'In Google Maps öffnen \u2197',
+prob_label:'Was wir reparieren',
+prob_h2:'Welches <span>Problem</span><br>hast du?',
+prob1_h:'Platten Reifen',
+prob1_p:'Schlauch gewechselt, Ventil geprüft, Reifensitz kontrolliert. Oft innerhalb einer Stunde erledigt.',
+prob1_lbl:'Schnellreparatur möglich',
+prob2_h:'Kette springt / reißt',
+prob2_p:'Kettenverschleiß prüfen, Kette ersetzen oder reparieren, Schaltwerk einstellen.',
+prob2_lbl:'Am selben Tag',
+prob3_h:'Bremsen greifen nicht',
+prob3_p:'Bremsbeläge, Bremszüge, Hydraulik \u2013 wir überprüfen alles und stellen sicher ein.',
+prob3_lbl:'Sicherheitscheck inklusive',
+prob4_h:'Schaltung hakt',
+prob4_p:'Schaltwerk / Umwerfer einstellen, Züge prüfen, Kassettenreinigung falls nötig.',
+prob4_lbl:'Feineinstellung gratis',
+prob5_h:'Lenker / Sattel wackelt',
+prob5_p:'Anzugsmomente prüfen, Vorbauten und Sattelstützen korrekt montieren.',
+prob5_lbl:'Schnell und günstig',
+prob6_h:'E-Bike Probleme',
+prob6_p:'Motor, Akku, Display \u2013 wir arbeiten mit Bosch, Shimano Steps und Bafang Systemen.',
+prob6_lbl:'Zertifizierter Service',
+prob7_h:'Rad knirscht / quietscht',
+prob7_p:'Euer Fahrradmechaniker in Wien: Geräuschdiagnose, Lager prüfen, Tretlager und Pedalachsen schmieren oder tauschen.',
+prob7_lbl:'Diagnose kostenlos',
+prob8_h:'Jahresinspektion',
+prob8_p:'Komplettcheck aller Komponenten \u2013 ideal vor dem Frühling oder nach dem Winter.',
+prob8_lbl:'Wartungspaket ab 49 \u20ac',
+prob9_h:'Stoßdämpfer / Federung',
+prob9_p:'Luftdruck einstellen, Wartungsintervalle, Leckagen reparieren, Service Kits einbauen.',
+prob9_lbl:'MTB-Spezialist',
+price_label:'Preisliste',
+price_h2:'Faire <span>Preise.</span>',
+price_intro:'Alle Preise inkl. MwSt. Materialkosten werden separat ausgewiesen. Vor jeder Reparatur gibt es eine kostenlose Einschätzung.',
+price_note_text:'* Arbeitszeit: 65 \u20ac/Stunde. Materialkosten werden zusätzlich berechnet und vorher besprochen. Preise können je nach Fahrradtyp variieren.',
+pcat1:'\u26a1 Schnellreparaturen', pcat2:'\uD83D\uDD27 Bremsen & Schaltung',
+pcat3:'\u2699\uFE0F Lager & Tretlager', pcat4:'\uD83D\uDD04 Wartungspakete', pcat5:'\u26a1 E-Bike Service',
+how_label:'So läuft\u2019s ab',
+how_h2:'Einfach & <span>transparent.</span>',
+step1_h:'Anrufen oder vorbeikommen',
+step1_p:'Fahrrad-Reparatur in der Nähe? Ruf kurz an oder komm einfach vorbei. Für größere Reparaturen empfehlen wir einen kurzen Anruf vorab, damit wir Zeit für dich einplanen können.',
+step2_h:'Kostenlose Diagnose',
+step2_p:'Wir schauen uns dein Rad an und erklären dir, was kaputt ist \u2013 klar und verständlich. Keine Überraschungen, keine Fachbegriff-Verwirrung.',
+step3_h:'Klare Kosteneinschätzung',
+step3_p:'Du bekommst einen ehrlichen Preis, bevor wir anfangen. Du entscheidest, was gemacht wird. Kein Druck, kein Upselling.',
+step4_h:'Reparatur',
+step4_p:'Wir reparieren dein Rad sorgfältig und mit hochwertigen Teilen. Kleine Jobs oft noch am selben Tag, größere innerhalb von 1\u20133 Werktagen.',
+step5_h:'Abholung & Abschlusskontrolle',
+step5_p:'Wir erklären kurz, was gemacht wurde, und geben Pflegetipps mit. Du fährst mit einem Rad weg, auf das du dich verlassen kannst.',
+mat_label:'Materialien & Teile',
+mat_h2:'Nur <span>echte Qualität.</span>',
+mat1_h:'Shimano & SRAM Antriebe',
+mat1_p:'Ketten, Kassetten, Schaltwerke und Kurbelarme ausschließlich von führenden Marken. Langlebig und weltweit kompatibel.',
+mat2_h:'Continental & Schwalbe Reifen',
+mat2_p:'Reifen und Schläuche von den besten deutschen Herstellern. Für Straße, Schotter und Gelände.',
+mat3_h:'Magura & Shimano Hydraulik',
+mat3_p:'Original-Bremsflüssigkeit und zertifizierte Bremsbeläge. Kein Billigersatz \u2013 nur was auch hält.',
+mat4_h:'Edelstahl-Schrauben & Befestigungen',
+mat4_p:'Keine Zinkschrauben, die nach einem Winter verrosten. Wir verwenden Edelstahl- und Titan-Schrauben, wo es sinnvoll ist.',
+mat5_h:'Professionelle Schmierstoffe',
+mat5_p:'Finish Line, Motorex und Weldtite \u2013 die richtigen Öle und Fette für jede Anwendung. Kein WD-40 auf Lagern.',
+mat6_h:'Original E-Bike Komponenten',
+mat6_p:'Für Bosch, Shimano Steps und Bafang verwenden wir ausschließlich Original-Ersatzteile und Service-Kits.',
+rev_label:'Kundenstimmen',
+rev_h2:'Was andere <span>sagen.</span>',
+rev_btn:'Alle Bewertungen auf Google',
+rev_source:'Google-Bewertung',
+rev1_text:'Johannes hat mein schon sehr mitgenommenes Rennrad so hergerichtet, dass es sich besser fährt als am ersten Tag! Er arbeitet mit einer Leidenschaft, wie ich es noch nie erlebt habe. Man merkt, er ist ein absoluter Profi. Ich kann ihn nur wärmstens weiterempfehlen.',
+rev2_text:'Absolute Empfehlung! Johannes hat mir sehr schnell geholfen, er arbeitet super transparent und ist sehr sympathisch.',
+rev3_text:'Johannes ist ein wirklich kompetenter und erfahrener Fahrradmechaniker. Er hat mein Trek-Mountainbike aus den 90ern behutsam renoviert und wieder in einen coolen Renner verwandelt. Ein Profi für alle Probleme rund ums Fahrrad!',
+rev4_text:'Johannes arbeitet mit einer Liebe zum Detail, die ich sehr bewundere. Er nimmt sich Zeit für jeden Kunden. In dieser Werkstatt wird jedes Fahrrad mit Sorgfalt repariert, getunt und verbessert. Beim nächsten Problem komme ich nur hierher!',
+rev5_text:'Der Fahrrad-Formel-1-Mechaniker Wiens! Johannes werde ich ab jetzt alles in Sachen Fahrrad anvertrauen. Altes verrostetes Stadtrad von 1980? Sofort zu ihm. Neues 3.000-Euro-Mountainbike? Er optimiert alles. Bin von dieser Werkstatt absolut überzeugt.',
+rev6_text:'Super persönliche Werkstatt! Alles sehr unkompliziert und professionell. Hoher Qualitätsanspruch, aber faire Preise \u2013 hier werden keine billigen Teile verbaut!',
+rev_card_aria:'Bewertung auf Google Maps lesen (öffnet neues Fenster)',
+cta_h2:'Dein Rad wartet.',
+cta_sub:'Ruf einfach an oder komm vorbei. Kostenlose Einschätzung vor jeder Reparatur \u2013 kein Druck, kein Upselling.',
+cta_addr:'Neulinggasse 24, 1030 Wien · Mo\u2013Sa 10\u201319 Uhr',
+footer_tagline:'Werkstatt · Tuningsalon · Rahmenbau',
+footer_copy:'\u00a9 2026 Johannes Maximilian Neugebauer',
+footer_vat:'Alle Preise inkl. MwSt. · Irrtümer vorbehalten',
+footer_addr_city:'Neulinggasse 24/1, 1030 Wien',
+dsgvo_btn:'Datenschutzerklärung',
+dsgvo_title:'Datenschutzerklärung',
+dsgvo_h1:'1. Verantwortlicher', dsgvo_h2:'2. Erhebung und Verarbeitung personenbezogener Daten',
+dsgvo_h3:'3. Kontaktaufnahme', dsgvo_h4:'4. Ihre Rechte', dsgvo_h5:'5. Externe Links',
+dsgvo_p1:'Diese Website erhebt keine personenbezogenen Daten über Tracking, Cookies oder Analysetools. Beim Aufruf werden vom Hosting-Anbieter technisch notwendige Zugriffsdaten protokolliert. Diese Daten werden nicht weitergegeben.',
+dsgvo_p2:'Wenn Sie uns per Telefon kontaktieren, werden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und danach nicht gespeichert.',
+dsgvo_p3:'Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung. Beschwerden können an die Datenschutzbehörde gerichtet werden: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>',
+dsgvo_p4:'Diese Website enthält keine eingebetteten Social-Media-Plugins oder Tracking-Pixel. Für externe verlinkte Seiten übernehmen wir keine Haftung.',
+imp_btn:'Impressum',
+imp_name_lbl:'Firmenname', imp_trade_lbl:'Gewerbewortlaut', imp_trade_val:'Fahrradtechnik',
+imp_prof_lbl:'Berufszweig', imp_prof_val:'Zweiradmechaniker, Fahrradtechniker',
+imp_addr_lbl:'Adresse', imp_auth_lbl:'Behörde gem. ECG',
+imp_auth_val:'Magistratisches Bezirksamt des III. Bezirkes',
+imp_lic_lbl:'Gewerbeberechtigung', imp_lic_val:'Seit 01.04.2020',
+},
+en: {
+page_title:'Bike Repair Vienna \u2013 FahrradTechnik | Johannes Neugebauer, 1030',
+page_desc:'Bike workshop Vienna 3rd district \u2013 professional bike repair, service and custom frame building. All brands. Mon\u2013Sat 10am\u20137pm. Neulinggasse 24, 1030 Vienna.',
+skip:'Skip to content',
+nav_about:'About', nav_location:'Location', nav_problems:'Services',
+nav_price:'Prices', nav_how:'How it works', nav_materials:'Materials',
+nav_reviews:'Reviews', nav_cta:'Contact',
+burger_open:'Open menu', burger_close:'Close menu',
+hero_badge:'Bike Repair Vienna \u2013 Neulinggasse 24, 1030',
+hero_h1:'Your Bike.<br><span>Fixed.</span><br>Done.',
+hero_sub:'Professional bike repair Vienna and bike service Vienna \u2013 workshop, tuning, custom frames, all brands. Mon\u2013Sat 10am\u20137pm.',
+hero_btn_price:'See price list \u2192',
+stat_repairs:'Repairs / year', stat_years:'Years experience',
+stat_wait:'Days waiting time', stat_rating:'Google rating',
+about_label:'Who we are',
+about_h2:'Real Expert.<br><span>No Games.</span>',
+about_role:'Bicycle Mechanic · Owner',
+about_p1:'FahrradTechnik Vienna is an independent bike workshop in the 3rd district \u2013 no franchise, no chain. Johannes Neugebauer is a real mechanic with decades of experience who cares that your bike actually works when you leave.',
+about_p2:'Bike repairs in Vienna \u2013 workshop, tuning salon and custom frame building under one roof. We fix everything: city bikes, road bikes, mountain bikes and vintage bikes. Minor repairs often done the same day \u2013 no appointment needed.',
+about_p3:'Free bike check Vienna \u2013 no hidden costs. You get a clear estimate before every repair. You decide what gets done.',
+about_card_p1:'Workshop · Tuning · Custom Frames.<br>Neulinggasse 24, 1030 Vienna',
+about_quote:'\u201cI won\u2019t repair a bike I wouldn\u2019t ride myself.\u201d',
+tag_allbrands:'All brands',
+gallery_1:'The Workshop', gallery_2:'Road Bike Service', gallery_3:'All types welcome',
+loc_label:'Where we are',
+loc_h2:'In the heart of <span>Vienna.</span>',
+loc_addr:'Address', loc_hours:'Opening hours',
+loc_hours_val:'Mon\u2013Sat: 10:00\u201319:00<br>Sun: closed',
+loc_phone:'Phone', loc_transit:'Getting here',
+loc_transit_val:'Tram Ungargasse/<br>Neulinggasse \u2013 1 min.<br><small>Bike workshop near you \u2013 Vienna 3rd</small>',
+loc_maps_btn:'Open in Google Maps \u2197',
+prob_label:'What we fix',
+prob_h2:'What\u2019s <span>wrong</span><br>with your bike?',
+prob1_h:'Flat tyre',
+prob1_p:'Inner tube replaced, valve checked, tyre seat inspected. Often done within an hour.',
+prob1_lbl:'Quick repair available',
+prob2_h:'Chain slipping / broken',
+prob2_p:'Chain wear check, replacement or repair, derailleur adjustment.',
+prob2_lbl:'Same day',
+prob3_h:'Brakes not gripping',
+prob3_p:'Brake pads, cables, hydraulics \u2013 we check everything and adjust correctly.',
+prob3_lbl:'Safety check included',
+prob4_h:'Shifting problems',
+prob4_p:'Rear/front derailleur adjustment, cable check, cassette cleaning if needed.',
+prob4_lbl:'Fine tuning included',
+prob5_h:'Handlebar / saddle loose',
+prob5_p:'Torque check, stem and seatpost correctly mounted and tightened.',
+prob5_lbl:'Fast and affordable',
+prob6_h:'E-bike issues',
+prob6_p:'Motor, battery, display \u2013 we work with Bosch, Shimano Steps and Bafang systems.',
+prob6_lbl:'Certified service',
+prob7_h:'Bike creaking / squeaking',
+prob7_p:'Your bike mechanic in Vienna: noise diagnosis, bearing check, bottom bracket and pedal axle service.',
+prob7_lbl:'Free diagnosis',
+prob8_h:'Annual service',
+prob8_p:'Full component check \u2013 ideal before spring or after winter storage.',
+prob8_lbl:'Service package from \u20ac49',
+prob9_h:'Suspension issues',
+prob9_p:'Air pressure setup, service intervals, leak repair, service kit installation.',
+prob9_lbl:'MTB specialist',
+price_label:'Price list',
+price_h2:'Fair <span>Prices.</span>',
+price_intro:'All prices incl. VAT. Parts are charged separately. Free estimate before every repair.',
+price_note_text:'* Labour: \u20ac65/hour. Parts billed additionally and discussed upfront. Prices may vary by bike type.',
+pcat1:'\u26a1 Quick repairs', pcat2:'\uD83D\uDD27 Brakes & gears',
+pcat3:'\u2699\uFE0F Bearings & bottom bracket', pcat4:'\uD83D\uDD04 Service packages', pcat5:'\u26a1 E-bike service',
+how_label:'How it works',
+how_h2:'Simple & <span>transparent.</span>',
+step1_h:'Call or drop in',
+step1_p:'Looking for bike repair near you? Call or just drop in. For bigger jobs, a quick call ahead helps us set aside time for you.',
+step2_h:'Free diagnosis',
+step2_p:'We look at your bike and explain what needs fixing \u2013 clearly and without jargon. No surprises.',
+step3_h:'Clear cost estimate',
+step3_p:'You get an honest price before we start. You decide what gets done. No pressure, no upselling.',
+step4_h:'Repair',
+step4_p:'We repair your bike carefully with quality parts. Small jobs often done the same day, larger ones within 1\u20133 working days.',
+step5_h:'Pick up & final check',
+step5_p:'We briefly explain what was done and give you care tips. You leave with a bike you can rely on.',
+mat_label:'Parts & Materials',
+mat_h2:'Only <span>real quality.</span>',
+mat1_h:'Shimano & SRAM drivetrains',
+mat1_p:'Chains, cassettes, derailleurs and cranks exclusively from leading brands. Durable and compatible worldwide.',
+mat2_h:'Continental & Schwalbe tyres',
+mat2_p:'Tyres and tubes from the best German manufacturers. For road, gravel and trail.',
+mat3_h:'Magura & Shimano hydraulics',
+mat3_p:'Original brake fluid and certified brake pads. No cheap substitutes \u2013 only what actually lasts.',
+mat4_h:'Stainless steel hardware',
+mat4_p:'No zinc bolts that rust after one winter. We use stainless steel and titanium fasteners where it makes sense.',
+mat5_h:'Professional lubricants',
+mat5_p:'Finish Line, Motorex and Weldtite \u2013 the right oils and greases for every application. No WD-40 on bearings.',
+mat6_h:'Original e-bike components',
+mat6_p:'For Bosch, Shimano Steps and Bafang we use only original spare parts and service kits.',
+rev_label:'Customer reviews',
+rev_h2:'What others <span>say.</span>',
+rev_btn:'All reviews on Google',
+rev_source:'Google Review',
+rev1_text:'Johannes restored my badly worn road bike to the point where it rides better than the day I bought it. The passion he brings to his work is unlike anything I have seen. Clearly a true professional \u2014 I can only recommend him warmly.',
+rev2_text:'Highly recommended! Johannes helped me quickly, worked in a completely transparent way and is incredibly friendly.',
+rev3_text:'Johannes is a genuinely skilled and experienced bike mechanic. He carefully restored my 1990s Trek mountain bike and turned it back into a proper ride. A pro for any bike problem!',
+rev4_text:'Johannes works with an attention to detail I find absolutely remarkable. He takes time for every customer. In this workshop every bike is repaired, tuned and improved with real care. Next time \u2014 I am coming straight back!',
+rev5_text:'The Formula-1 mechanic of the Vienna cycling scene! I will be trusting Johannes with everything bike-related from now on. Old rusty city bike from 1980? Straight to him. New \u20ac3,000 mountain bike? He optimises everything. Absolutely sold on this workshop.',
+rev6_text:'A wonderfully personal workshop! Everything is straightforward and professional. High standards but fair prices \u2013 no cheap parts used here!',
+rev_card_aria:'Read review on Google Maps (opens new window)',
+cta_h2:'Your bike is waiting.',
+cta_sub:'Call or drop in. Free estimate before every repair \u2013 no pressure, no upselling.',
+cta_addr:'Neulinggasse 24, 1030 Vienna · Mon\u2013Sat 10am\u20137pm',
+footer_tagline:'Workshop · Tuning · Custom Frames',
+footer_copy:'\u00a9 2026 Johannes Maximilian Neugebauer',
+footer_vat:'All prices incl. VAT · Subject to change',
+footer_addr_city:'Neulinggasse 24/1, 1030 Vienna',
+dsgvo_btn:'Privacy Policy',
+dsgvo_title:'Privacy Policy',
+dsgvo_h1:'1. Controller', dsgvo_h2:'2. Data collection and processing',
+dsgvo_h3:'3. Contact', dsgvo_h4:'4. Your rights', dsgvo_h5:'5. External links',
+dsgvo_p1:'This website does not collect personal data through tracking, cookies or analytics tools. When visiting the site, technically necessary access data is logged by the hosting provider within statutory obligations. This data is not shared with third parties.',
+dsgvo_p2:'If you contact us by phone, the information you provide is used solely to handle your enquiry and is not stored afterwards.',
+dsgvo_p3:'You have the right to access, rectify, erase and restrict the processing of your personal data. Complaints can be directed to the Austrian data protection authority: <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>',
+dsgvo_p4:'This website contains no embedded social media plugins or tracking pixels. We accept no liability for the content of linked external pages.',
+imp_btn:'Legal notice',
+imp_name_lbl:'Company name', imp_trade_lbl:'Trade description', imp_trade_val:'Bicycle technology',
+imp_prof_lbl:'Profession', imp_prof_val:'Two-wheel mechanic, bicycle technician',
+imp_addr_lbl:'Address', imp_auth_lbl:'Supervisory authority (ECG)',
+imp_auth_val:'Magistratisches Bezirksamt des III. Bezirkes',
+imp_lic_lbl:'Licence since', imp_lic_val:'01.04.2020',
+}
+};
+let currentLang = 'de';
+function setLang(lang) {
+if (lang === currentLang) return;
+currentLang = lang;
+const t = T[lang];
+document.getElementById('html-root').lang = lang;
+document.getElementById('page-title').textContent = t.page_title;
+const d = document.getElementById('page-desc');
+if (d) d.setAttribute('content', t.page_desc);
+document.querySelectorAll('[data-i18n]').forEach(el => {
+const k = el.getAttribute('data-i18n');
+if (t[k] !== undefined) el.textContent = t[k];
+});
+document.querySelectorAll('[data-i18n-html]').forEach(el => {
+const k = el.getAttribute('data-i18n-html');
+if (t[k] !== undefined) el.innerHTML = t[k];
+});
+document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+document.querySelectorAll('[data-i18n-aria="rev_card_aria"]').forEach(el => {
+el.setAttribute('aria-label', t.rev_card_aria);
+});
+const burger = document.getElementById('burger');
+const isOpen = burger.getAttribute('aria-expanded') === 'true';
+burger.setAttribute('aria-label', isOpen ? t.burger_close : t.burger_open);
+try { localStorage.setItem('lang', lang); } catch(e) {}
+}
+// Auto-detect: run after DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+let saved;
+try { saved = localStorage.getItem('lang'); } catch(e) {}
+const preferred = saved || (navigator.language || '').slice(0,2).toLowerCase();
+if (preferred === 'en') setLang('en');
+});
+</script>
+</body>
+</html>
